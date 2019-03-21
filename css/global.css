@@ -4,7 +4,7 @@
 }
 
 html {
-	color: pink;
+	color: rgb(230, 104, 202);
 	background-repeat:repeat-x;
 	background-position:bottom center;
 	background-color:rgb(249, 253, 2);
@@ -19,7 +19,7 @@ body {
 
 h1 {
 	font-size: 1.3em;
-	text-shadow:-2px 1px 2px pink;
+	text-shadow:-2px 1px 2px rgb(230, 104, 202);
 	margin-bottom: 25px;
 }
 
@@ -35,6 +35,7 @@ a {
 
 a:hover {
 	text-decoration:underline;
+	color: rgb(249, 253, 2);
 }
 
 .clear {
@@ -51,7 +52,7 @@ a:hover {
 	background-image:url('../images/petite-etoile.png');
 	background-repeat:no-repeat;
 	background-position:bottom right;
-	box-shadow: 0 0 15px pink;
+	box-shadow: 0 0 15px rgb(230, 104, 202);
 	border-radius: 3px;
 }
 
@@ -70,6 +71,16 @@ a:hover {
 	background-position:top left;
 	background-repeat:no-repeat;
 	height: 55px;
+	-webkit-animation: rotation 0.5s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+	from {
+			-webkit-transform: rotate(0deg);
+	}
+	to {
+			-webkit-transform: rotate(-2deg);
+	}
 }
 
 .header .menu {
@@ -110,12 +121,12 @@ a:hover {
 }
 
 .error-div {
-	border: 1px solid red;
+	border: 1px solid rgb(116, 30, 97);
 	padding:5px;
 	border-radius: 3px;
-	background-color: pink;
+	background-color: rgb(230, 104, 202);
 	margin-bottom: 20px;
-	color:red;
+	color:rgb(116, 30, 97);
 }
 
 .login-form-frame {
@@ -131,7 +142,7 @@ a:hover {
 button {
 	box-shadow:rgba(0,0,0,1) 0 0px 2px 0;
 	color:#333;
-	background-color:#d1d1d1;
+	background-color:rgb(230, 104, 202);
 	border-radius:3px;
 	border:none;
 	font-size:16px;
@@ -142,5 +153,6 @@ button {
 }
 
 button:hover {
-	background-color:#bbb;
+	background-color: black;
+	color: rgb(249, 253, 2);
 }

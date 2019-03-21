@@ -4,7 +4,7 @@
 		public static function authenticate($username, $password) {
 			$visibility = 0;
 
-			if ($username == "john" && $password == "qwerty") {
+			if ($username == "test" && $password == "test") {
 				$visibility = 1;
 			}
 
@@ -14,8 +14,8 @@
 		public static function getProfile($username) {
 			$info = "";
 
-			if ($username == "john") {
-				$info = "info@john.com";
+			if ($username == "test") {
+				$info = "test@test.com";
 			}
 
 			return $info;
