@@ -2,7 +2,7 @@
 <html lang="fr">
     <head>
         <link href="css/global.css" rel="stylesheet" />
-		<title>StarCVM coffees</title>
+		<title>SIRIUS | étoile par Alexis</title>
 		<meta charset="utf-8" />
     </head>
     <body>

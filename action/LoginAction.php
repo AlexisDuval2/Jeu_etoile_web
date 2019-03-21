@@ -12,16 +12,19 @@
 		protected function executeAction() {
 			$this->wrongLogin = false;
 
+			// -----------------------
+			// logique pour se connecter
+			// -----------------------
+
 			if (isset($_POST["username"])) {
-				$pageVisibility = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
 
-				if ($pageVisibility > CommonAction::$VISIBILITY_PUBLIC) {
+				$resultat = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
 
+				if (strlen($resultat) == 40) {
 					$_SESSION["username"] = $_POST["username"];
-					$_SESSION["visibility"] = $pageVisibility;
-
+					$_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
 					header("location:home.php");
-					exit;
+					exit();
 				}
 				else {
 					$this->wrongLogin = true;
@@ -29,3 +32,15 @@
 			}
 		}
 	}
+
+	// clé de session à conserver!
+	// variable de session!
+
+	// connexion erroné???
+	// afficher le message de Fred!
+
+	// faire une page de déconnexion!
+
+
+	// liste de parties... le lobby
+	// il faut un design

@@ -4,9 +4,6 @@
 	abstract class CommonAction {
 		public static $VISIBILITY_PUBLIC = 0;
 		public static $VISIBILITY_MEMBER = 1;
-		public static $VISIBILITY_MODERATOR = 2;
-		public static $VISIBILITY_ADMINISTRATOR = 3;
-		public static $VISIBILITY_GOD = 4;
 
 		private $pageVisibility;
 
