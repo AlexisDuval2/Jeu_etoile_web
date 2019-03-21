@@ -14,7 +14,14 @@
 			<?php
 				if ($action->wrongLogin) {
 					?>
-					<div class="error-div"><strong>Erreur : </strong>Connexion erronée</div>
+					<div class="error-div">
+						<strong>Erreur : </strong>Connexion erronée
+						<p>
+							<?php
+								$resultat;
+							?>
+						</p>
+					</div>
 					<?php
 				}
 			?>

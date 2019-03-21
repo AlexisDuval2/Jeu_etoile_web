@@ -8,7 +8,7 @@
     <body>
 		<div class="header">
 				<div class="site-title-section">
-					<h2>StarCVM Coffees</h2>
+					<h2>SIRIUS | étoile par Alexis</h2>
 				</div>
 				<div class="username-section">
 					Bonjour, <?= $action->getUsername() ?> !

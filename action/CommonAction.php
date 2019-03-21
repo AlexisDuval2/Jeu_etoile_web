@@ -35,7 +35,6 @@
 
 		protected abstract function executeAction();
 
-
 		public function getUsername() {
 			return empty($_SESSION["username"]) ? "Invité" : $_SESSION["username"];
 		}

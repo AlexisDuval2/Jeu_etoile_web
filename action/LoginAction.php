@@ -41,6 +41,5 @@
 
 	// faire une page de déconnexion!
 
-
 	// liste de parties... le lobby
 	// il faut un design
