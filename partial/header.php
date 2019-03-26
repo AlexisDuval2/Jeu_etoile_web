@@ -7,43 +7,41 @@
     </head>
     <body>
 		<div class="header">
-				<div class="site-title-section">
-					<h2>SIRIUS | étoile par Alexis</h2>
-				</div>
-				<div class="username-section">
-					Bonjour, <?= $action->getUsername() ?> !
+			<div class="site-title-section">
+				<h2>SIRIUS | étoile par Alexis</h2>
+			</div>
+			<div class="username-section">
+				Bonjour, <?= $action->getUsername() ?> !
+				<?php
+					if ($action->isLoggedIn()) {
+				?>
+						<div>
+							[
+							<a href="?logout=true">Déconnexion</a>
+							]
+						</div>
+				<?php
+					}
+				?>
+			</div>
+			<div class="clear"></div>
+			<div class="menu">
+				<ul>
+					<li><a href="index.php">Accueil du site</a></li>
 					<?php
 						if ($action->isLoggedIn()) {
-							?>
-							<div>
-								[
-								<a href="?logout=true">Déconnexion</a>
-								]
-							</div>
+					?>
+							<li><a href="home.php">Mon accueil perso</a></li>
+							<li><a href="profile.php">Mon profil</a></li>
+					<?php
+						}
+						else {
+					?>
+							<li><a href="login.php">Se connecter</a></li>
 							<?php
 						}
 					?>
-				</div>
-				<div class="clear"></div>
-
-				<div class="menu">
-					<ul>
-						<li><a href="index.php">Accueil du site</a></li>
-						<?php
-							if ($action->isLoggedIn()) {
-								?>
-								<li><a href="home.php">Mon accueil perso</a></li>
-								<li><a href="profile.php">Mon profil</a></li>
-								<?php
-							}
-							else {
-								?>
-								<li><a href="login.php">Se connecter</a></li>
-								<?php
-							}
-						?>
-					</ul>
-				</div>
+				</ul>
 			</div>
-
+		</div>
 		<div class="container">

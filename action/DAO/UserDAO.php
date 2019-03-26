@@ -9,15 +9,15 @@
 			return UserDAO::callAPI("signin", $data);
 		}
 
-		public static function getProfile($username) {
-			$info = "";
+		// public static function getProfile($username) {
+		// 	$info = "";
 
-			if ($username == "test") {
-				$info = "test@test.com";
-			}
+		// 	if ($username == "test") {
+		// 		$info = "test@test.com";
+		// 	}
 
-			return $info;
-		}
+		// 	return $info;
+		// }
 
 		public static function callAPI($service, array $data) {
 

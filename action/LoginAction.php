@@ -4,6 +4,7 @@
 
 	class LoginAction extends CommonAction{
 		public $wrongLogin = false;
+		public $cleDeSession = "";
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
@@ -11,16 +12,14 @@
 
 		protected function executeAction() {
 			$this->wrongLogin = false;
-
+			$this->cleDeSession = "";
 			// -----------------------
 			// logique pour se connecter
 			// -----------------------
-
 			if (isset($_POST["username"])) {
 
-				$resultat = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
-
-				if (strlen($resultat) == 40) {
+				$this->cleDeSession = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
+				if (strlen($this->cleDeSession) == 40) {
 					$_SESSION["username"] = $_POST["username"];
 					$_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
 					header("location:home.php");
@@ -35,9 +34,6 @@
 
 	// clé de session à conserver!
 	// variable de session!
-
-	// connexion erroné???
-	// afficher le message de Fred!
 
 	// faire une page de déconnexion!
 
