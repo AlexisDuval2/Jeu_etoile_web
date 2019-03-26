@@ -17,7 +17,7 @@
 				?>
 						<div>
 							[
-							<a href="?logout=true">Déconnexion</a>
+							<a href="logout.php">Déconnexion</a>
 							]
 						</div>
 				<?php

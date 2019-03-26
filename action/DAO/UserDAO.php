@@ -9,16 +9,6 @@
 			return UserDAO::callAPI("signin", $data);
 		}
 
-		// public static function getProfile($username) {
-		// 	$info = "";
-
-		// 	if ($username == "test") {
-		// 		$info = "test@test.com";
-		// 	}
-
-		// 	return $info;
-		// }
-
 		public static function callAPI($service, array $data) {
 
 			$apiURL = "https://apps-de-cours.com/web-sirius/server/api/" . $service . ".php";
