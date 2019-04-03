@@ -7,8 +7,8 @@
 	require_once("partial/header.php");
 ?>
 
+	<script src="javascript/logout.js"></script>
 	<h1>Déconnexion</h1>
-
 	<div class="logout-frame">
 		Merci, à la prochaine!
 	</div>

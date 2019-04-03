@@ -7,7 +7,6 @@ let imageEtoile = new Image();
 window.onload = () => {
 	canvas = document.querySelector("#canvasLogout");
 	ctx = canvas.getContext("2d");
-
 	imageEtoile.src = "images/petite-etoile2.png";
 
 	tick();

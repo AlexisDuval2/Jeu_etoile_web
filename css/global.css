@@ -212,16 +212,15 @@ button:hover {
 	height: 400px;
 	position: absolute;
 	top: 134px;
-	left: calc(100vw / 2 - 750px / 2);
+	left: calc((100vw - 750px) / 2);
 }
 
-#canvasHome {
-	width: 100%;
-	height: 100%;
+#canvasIndex {
+	width: 900px;
+	height: 700px;
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 180px;
+	left: calc((100vw - 900px) / 2 - 10px);
 	background-image: url('../images/bg.png');
-	background-size: 100% 100%;
 	z-index: -1;
 }

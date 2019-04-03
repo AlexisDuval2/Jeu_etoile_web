@@ -1,52 +1,60 @@
 
 let canvas = null;
 let ctx = null;
-let spriteList = [];
 let imageEtoile = new Image();
+let etoile = null;
+let timer = null;
 
 window.onload = () => {
-	canvas = document.querySelector("#canvasHome");
+	canvas = document.querySelector("#canvasIndex");
 	ctx = canvas.getContext("2d");
-
-	imageEtoile.src = "images/petite-etoile2.png";
+	imageEtoile.src = "images/etoileAccueil.png";
+	etoile = new Etoile();
+	timer = 0;
 
 	tick();
 }
 
 const tick = () => {
-	ctx.clearRect(0, 0, 750, 400);
-
-	if (Math.random() < 0.4) {
-		spriteList.push(new Etoile());
-	}
-
-	for (let i = 0; i < spriteList.length; i++) {
-		const sprite = spriteList[i];
-		const alive = sprite.tick();
-		if (!alive) {
-			spriteList.splice(i, 1);
-			i--;
-		}
-	}
-
+	ctx.clearRect(0, 0, 900, 700);
+	etoile.tick();
 	window.requestAnimationFrame(tick);
 }
 
 class Etoile {
 	constructor() {
-		this.x = Math.random() * canvas.width + 40;
-		this.y = -10;
-		this.nbAleatoire = Math.random() / 5;
-		this.largeur = imageEtoile.naturalWidth * this.nbAleatoire + 4;
-		this.hauteur = imageEtoile.naturalHeight * this.nbAleatoire + 4;
-		this.vitesseX = this.largeur / 9.5;
-		this.vitesseY = this.hauteur / 6.75;
+		this.x = canvas.width / 2;
+		this.y = 1;
+		this.largeur = 22;
+		this.hauteur = 12;
+		this.vitesseX = 0.5;
+		this.vitesseY = 0.4;
 	}
 
 	tick() {
-		this.x -= this.vitesseX;
+		if (this.x > 0) {
+			this.vitesseX *= -1;
+		}
+		if (this.x < canvas.width - this.largeur) {
+			this.vitesseX *= -1;
+		}
+		if (this.y > 0) {
+			this.vitesseY *= -1;
+		}
+		if (this.y < canvas.height - this.hauteur) {
+			this.vitesseY *= -1;
+		}
+
+		if (Math.random() < 0.5) {
+			this.vitesseX += Math.random();
+		}
+		if (Math.random() < 0.1) {
+			this.vitesseY += Math.random();
+		}
+
+		this.x += this.vitesseX;
 		this.y += this.vitesseY;
+
 		ctx.drawImage(imageEtoile, this.x, this.y, this.largeur, this.hauteur);
-		return this.y < canvas.height ? true : false;
 	}
 }
