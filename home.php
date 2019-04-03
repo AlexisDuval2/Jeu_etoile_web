@@ -1,8 +1,6 @@
 <?php
 	require_once("action/HomeAction.php");
 
-	// phpx = créer la vue/frontend
-
 	$action = new HomeAction();
 	$action->execute();
 
@@ -10,7 +8,6 @@
 ?>
 
 	<h1>Mon accueil perso</h1>
-
 	<p>Bienvenue !</p>
 
 <?php

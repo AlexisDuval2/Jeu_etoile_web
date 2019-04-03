@@ -5,6 +5,7 @@
 	class LoginAction extends CommonAction {
 
 		public $wrongLogin = false;
+		public $cleDeSession = "";
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
@@ -17,6 +18,7 @@
 				if (strlen($this->cleDeSession) == 40) {
 					$_SESSION["username"] = $_POST["username"];
 					$_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
+					$_SESSION["cleDeSession"] = $this->cleDeSession;
 					header("location:home.php");
 					exit();
 				}
@@ -26,9 +28,6 @@
 			}
 		}
 	}
-
-	// clé de session à conserver!
-	// variable de session!
 
 	// liste de parties... le lobby
 	// il faut un design

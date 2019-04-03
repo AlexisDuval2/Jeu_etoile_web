@@ -12,7 +12,7 @@
 	<div class="logout-frame">
 		Merci, à la prochaine!
 	</div>
-	<canvas id="canvas"></canvas>
+	<canvas id="canvasLogout"></canvas>
 
 <?php
 	require_once("partial/footer.php");
