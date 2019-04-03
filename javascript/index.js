@@ -25,10 +25,10 @@ class Etoile {
 	constructor() {
 		this.x = canvas.width / 2;
 		this.y = 1;
-		this.largeur = 22;
-		this.hauteur = 12;
-		this.vitesseX = 0.5;
-		this.vitesseY = 0.4;
+		this.largeur = 17;
+		this.hauteur = 9;
+		this.vitesseX = 4;
+		this.vitesseY = 3;
 	}
 
 	tick() {
@@ -43,13 +43,6 @@ class Etoile {
 		}
 		if (this.y < canvas.height - this.hauteur) {
 			this.vitesseY *= -1;
-		}
-
-		if (Math.random() < 0.5) {
-			this.vitesseX += Math.random();
-		}
-		if (Math.random() < 0.1) {
-			this.vitesseY += Math.random();
 		}
 
 		this.x += this.vitesseX;
