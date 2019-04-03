@@ -16,7 +16,7 @@ window.onload = () => {
 }
 
 const tick = () => {
-	ctx.clearRect(0, 0, 900, 700);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	etoile.tick();
 	window.requestAnimationFrame(tick);
 }
@@ -27,11 +27,29 @@ class Etoile {
 		this.y = 1;
 		this.largeur = 17;
 		this.hauteur = 9;
-		this.vitesseX = 4;
-		this.vitesseY = 3;
+		this.vitesseX = 3;
+		this.vitesseY = 2;
+		this.motionTrailLength = 117;
+		this.positions = [];
+	}
+
+	storeLastPosition(xPos, yPos) {
+		// push an item
+		this.positions.push({
+			x: xPos,
+			y: yPos
+		});
+
+		//get rid of first item
+		if (this.positions.length > this.motionTrailLength) {
+			this.positions.shift();
+		}
 	}
 
 	tick() {
+
+		this.storeLastPosition(this.x, this.y);
+
 		if (this.x > 0) {
 			this.vitesseX *= -1;
 		}
@@ -48,6 +66,10 @@ class Etoile {
 		this.x += this.vitesseX;
 		this.y += this.vitesseY;
 
-		ctx.drawImage(imageEtoile, this.x, this.y, this.largeur, this.hauteur);
+		for (let i = 0; i < this.positions.length; i++) {
+			let x = Math.pow(this.positions[i].x, 2) * 0.0035;
+			let y = Math.pow(this.positions[i].y, 2) * 0.0072;
+			ctx.drawImage(imageEtoile, x, y, i*0.15, i*0.08);
+		}
 	}
 }
