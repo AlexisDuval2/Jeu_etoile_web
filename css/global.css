@@ -54,6 +54,42 @@ a:hover {
 	background-position: bottom right;
 	box-shadow: 0 0 15px rgb(230, 104, 202);
 	border-radius: 3px;
+	animation-name: flashEtoile;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes flashEtoile {
+	0% {
+		background-color: black;
+		background-image: url('../images/petite-etoile.png');
+	}
+	1% {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.92);
+	}
+	10% {
+		background-image: url('../images/petite-etoile.png');
+	}
+	30% {
+		background-image: url('../images/petite-etoile.png');
+	}
+	40% {
+		background-color: rgb(10, 44, 54);
+	}
+	79% {
+		background-image: url('../images/petite-etoile.png');
+	}
+	80% {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.94);
+	}
+	95% {
+		background-image: url('../images/petite-etoile.png');
+	}
+	100% {
+		background-image: url('../images/petite-etoile.png');
+	}
 }
 
 .header {
