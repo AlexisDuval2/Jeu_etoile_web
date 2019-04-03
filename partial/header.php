@@ -27,11 +27,11 @@
 			<div class="clear"></div>
 			<div class="menu">
 				<ul>
-					<li><a href="index.php">Accueil du site</a></li>
+					<li><a href="index.php">Accueil</a></li>
 					<?php
 						if ($action->isLoggedIn()) {
 					?>
-							<li><a href="home.php">Mon accueil perso</a></li>
+							<li><a href="home.php">Choisir une partie</a></li>
 							<li><a href="profile.php">Mon profil</a></li>
 					<?php
 						}

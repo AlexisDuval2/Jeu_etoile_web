@@ -7,8 +7,8 @@
 	require_once("partial/header.php");
 ?>
 
-	<h1>Mon accueil perso</h1>
-	<p>Bienvenue !</p>
+	<h1>Bienvenue au Lobby!</h1>
+	<p>[infos ici]</p>
 
 <?php
 	require_once("partial/footer.php");

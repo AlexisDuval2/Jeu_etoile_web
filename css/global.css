@@ -142,7 +142,8 @@ a:hover {
 
 .header .menu ul li {
 	display: inline;
-	padding-right: 15px;
+	padding-left: 20px;
+	padding-right: 3px;
 }
 
 .header .username-section {
@@ -256,7 +257,7 @@ button:hover {
 	height: 700px;
 	position: absolute;
 	top: 180px;
-	left: calc((100vw - 900px) / 2 - 10px);
+	left: calc((100vw - 900px) / 2);
 	background-image: url('../images/bg.png');
 	z-index: -1;
 }
