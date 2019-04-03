@@ -6,9 +6,9 @@
 
 	require_once("partial/header.php");
 ?>
-	<h1>Ceci est une page privée</h1>
+	<h1>Mon profil</h1>
 
-	<p>Sur cette page, vous pourrez modifier votre profil (mot de passe, etc)</p>
+	<p>[détails du profil]</p>
 
 
 <?php

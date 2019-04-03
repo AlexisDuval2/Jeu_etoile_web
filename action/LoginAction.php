@@ -30,7 +30,5 @@
 	// clé de session à conserver!
 	// variable de session!
 
-	// faire une page de déconnexion!
-
 	// liste de parties... le lobby
 	// il faut un design

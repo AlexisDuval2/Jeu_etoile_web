@@ -4,6 +4,7 @@
         <link href="css/global.css" rel="stylesheet" />
 		<title>SIRIUS | étoile par Alexis</title>
 		<meta charset="utf-8" />
+		<script src="javascript/logout.js"></script>
     </head>
     <body>
 		<div class="header">

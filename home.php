@@ -9,7 +9,7 @@
 	require_once("partial/header.php");
 ?>
 
-	<h1>Ceci est une page privée</h1>
+	<h1>Mon accueil perso</h1>
 
 	<p>Bienvenue !</p>
 
