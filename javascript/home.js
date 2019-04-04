@@ -18,8 +18,15 @@ const appelerLaPage = () => {
 	})
 	.then(response => response.json())
 	.then(data => {
+
+		// data.forEach(element => {
+		// 	console.log(element.name);
+		// });
+
 		console.log(data);
+
 		traiter();
+
 		// faire du dom pour afficher???
 		// document.querySelector(".sectionQuestion").innerHTML = data;
 		// UTILISER TEMPLATE POUR AFFICHAGE
