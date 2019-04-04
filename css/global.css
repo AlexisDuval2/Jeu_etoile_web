@@ -66,7 +66,7 @@ a:hover {
 	}
 	1% {
 		background-image: none;
-		background-color: rgba(0, 0, 0, 0.92);
+		background-color: rgba(0, 0, 0, 0.85);
 	}
 	10% {
 		background-image: url('../images/petite-etoile.png');
@@ -82,7 +82,7 @@ a:hover {
 	}
 	80% {
 		background-image: none;
-		background-color: rgba(0, 0, 0, 0.94);
+		background-color: rgba(0, 0, 0, 0.88);
 	}
 	95% {
 		background-image: url('../images/petite-etoile.png');
