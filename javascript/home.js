@@ -1,27 +1,22 @@
 
-//-----------------------------------------------------------------------
-
-// AJAX
-// VOIR le dossier "Lab - 07 - FRED - devinez le chiffre"
 window.onload = () => {
 
+	// attendre 2 secondes
 
+	// appeler la page en utilisant ajax
 
+	// formdata c'est pour envoyer!
 
-
-
-
-
-	let formData = new FormData();
-	formData.append('chiffre', document.querySelector("#reponse").value);
+	// fetch c'est pour appeler la page
 
 	fetch("ajax-devinette.php", {
 		method: "POST",
 		credentials: 'include', // Pour envoyer les cookies avec la requête!
-		body: formData
 	})
 	.then(response => response.json())
-	.then(data => {
+	.then(data => { // résultat du echo, ajaxHome (données des parties)
+		// afficher données
+		// faire du dom pour afficher???
 		document.querySelector(".sectionQuestion").innerHTML = data;
 	})
 }
