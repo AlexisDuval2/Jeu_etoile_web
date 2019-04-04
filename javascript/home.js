@@ -1,57 +1,28 @@
 
 window.onload = () => {
-
 	traiter();
 }
 
 // fonction qui traite les données
 const traiter = () => {
-	let delai = 2000;
+	let delai = 2200;
 	setTimeout(function(){appelerLaPage();}, delai);
 }
 
 // fonction pour appeler la page en utilisant Ajax
 const appelerLaPage = () => {
 
-	alert("allo");
-
-	// fetch("ajax-devinette.php", {
-	// 	method: "POST",
-	// 	credentials: 'include', // Pour envoyer les cookies avec la requête!
-	// })
-	// .then(response => response.json())
-	// .then(data => { // résultat du echo, ajaxHome (données des parties)
-	// 	// afficher données
-	// 	// console.log()
-	// 	// faire du dom pour afficher???
-	// 	document.querySelector(".sectionQuestion").innerHTML = data;
-	// })
-
-
+	fetch("ajaxHome.php", {
+		method: "POST",
+		credentials: 'include'
+	})
+	.then(response => response.json())
+	.then(data => {
+		console.log(data);
+		traiter();
+		// faire du dom pour afficher???
+		// document.querySelector(".sectionQuestion").innerHTML = data;
+		// UTILISER TEMPLATE POUR AFFICHAGE
+		// VOIR le dossier "_TEMPLATE JS"
+	})
 }
-
-//-----------------------------------------------------------------------
-
-// UTILISER TEMPLATE POUR AFFICHAGE
-// VOIR le dossier "_TEMPLATE JS"
-
-//-----------------------------------------------------------------------
-
-// -----------------------
-// EXPLICATIONS DE FRED
-// -----------------------
-// Ce dont j'ai besoin
-// (1) La vue:
-// 	(a) home.php
-// 	(b) homeAction.php
-// (2) Informations de l'API (Ajax):
-// 	(a) ajaxHome.php
-// 	(b) ajaxHomeAction.php
-// 	(c) home.js
-
-// Exemple d'Ajax vu en classe:
-// ajax-devinette.php // c'est comme une vue invisible, les infos apparaîssent là
-// ajaxDevinetteAction.php // logique des données
-// javascript.js // ATTENTION: FormData c'est pour envoyer, mais moi je ne veux pas envoyer!
-
-//-----------------------------------------------------------------------
