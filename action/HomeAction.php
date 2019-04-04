@@ -1,6 +1,5 @@
 <?php
 	require_once("action/CommonAction.php");
-	require_once("action/DAO/UserDAO.php");
 
 	class HomeAction extends CommonAction {
 
@@ -9,10 +8,5 @@
 		}
 
 		protected function executeAction() {
-			$liste = UserDAO::getAvailableGames($_SESSION["cleDeSession"]);
-
-			var_dump($liste);
-
-			exit();
 		}
 	}
