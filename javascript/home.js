@@ -1,24 +1,33 @@
 
 window.onload = () => {
 
-	// attendre 2 secondes
+	traiter();
+}
 
-	// appeler la page en utilisant ajax
+// fonction qui traite les données
+const traiter = () => {
+	let delai = 2000;
+	setTimeout(function(){appelerLaPage();}, delai);
+}
 
-	// formdata c'est pour envoyer!
+// fonction pour appeler la page en utilisant Ajax
+const appelerLaPage = () => {
 
-	// fetch c'est pour appeler la page
+	alert("allo");
 
-	fetch("ajax-devinette.php", {
-		method: "POST",
-		credentials: 'include', // Pour envoyer les cookies avec la requête!
-	})
-	.then(response => response.json())
-	.then(data => { // résultat du echo, ajaxHome (données des parties)
-		// afficher données
-		// faire du dom pour afficher???
-		document.querySelector(".sectionQuestion").innerHTML = data;
-	})
+	// fetch("ajax-devinette.php", {
+	// 	method: "POST",
+	// 	credentials: 'include', // Pour envoyer les cookies avec la requête!
+	// })
+	// .then(response => response.json())
+	// .then(data => { // résultat du echo, ajaxHome (données des parties)
+	// 	// afficher données
+	// 	// console.log()
+	// 	// faire du dom pour afficher???
+	// 	document.querySelector(".sectionQuestion").innerHTML = data;
+	// })
+
+
 }
 
 //-----------------------------------------------------------------------
@@ -43,6 +52,6 @@ window.onload = () => {
 // Exemple d'Ajax vu en classe:
 // ajax-devinette.php // c'est comme une vue invisible, les infos apparaîssent là
 // ajaxDevinetteAction.php // logique des données
-// javascript.js // FormData etc???
+// javascript.js // ATTENTION: FormData c'est pour envoyer, mais moi je ne veux pas envoyer!
 
 //-----------------------------------------------------------------------

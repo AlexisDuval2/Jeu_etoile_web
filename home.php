@@ -7,6 +7,7 @@
 	require_once("partial/header.php");
 ?>
 
+	<script src="javascript/home.js"></script>
 	<h1>Bienvenue au Lobby!</h1>
 	<p>[infos ici]</p>
 
