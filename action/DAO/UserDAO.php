@@ -9,6 +9,13 @@
 			return UserDAO::callAPI("signin", $data);
 		}
 
+		public static function getAvailableGames($cleDeSession) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+
+			return UserDAO::callAPI("list", $data);
+		}
+
 		public static function callAPI($service, array $data) {
 
 			$apiURL = "https://apps-de-cours.com/web-sirius/server/api/" . $service . ".php";
