@@ -4,13 +4,9 @@ window.onload = () => {
 }
 
 // fonction qui traite les données
-const traiter = () => {
-	let delai = 2200;
-	setTimeout(function(){appelerLaPage();}, delai);
-}
 
 // fonction pour appeler la page en utilisant Ajax
-const appelerLaPage = () => {
+const traiter = () => {
 
 	fetch("ajaxHome.php", {
 		method: "POST",
@@ -19,35 +15,27 @@ const appelerLaPage = () => {
 	.then(response => response.json())
 	.then(data => {
 
-		// document.getElementById("container").innerHTML = "";
+		document.getElementById("boite-de-niveaux").innerHTML = "";
 
-		// let charHTML = document.querySelector("#character-template").innerHTML;
-
-		// for (var i = 0; i < characters.length; i++) {
-		// 	let node = document.createElement("div");
-		// 	node.innerHTML = charHTML;
-
-		// 	node.querySelector("h2").innerHTML = characters[i].name;
-		// 	node.querySelector(".type").innerHTML = characters[i].type;
-		// 	node.querySelector(".hp").innerHTML = characters[i].hp;
-
-		// 	document.getElementById("container").appendChild(node);
-		// }
+		let niveauHTML = document.querySelector("#template-des-niveaux").innerHTML;
 
 		data.forEach(niveau => {
-			console.log("----------------------------");
-			console.log("Nom du niveau: " + niveau.name);
-			console.log("<niveau " + niveau.level + ">");
-			console.log("Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users);
-			console.log("Points de vie du boss: " + niveau.current_hp + "/" + niveau.hp);
-			console.log("Type: " + niveau.type);
+			let node = document.createElement("div");
+			node.setAttribute("class", "cadre-niveau");
+			node.innerHTML = niveauHTML;
+
+			console.log(node.querySelector("nom"));
+
+			node.querySelector(".nom").innerHTML = "nom du niveau: " + niveau.name;
+			node.querySelector(".valeur-du-niveau").innerHTML = "-niveau " + niveau.level + "-";
+			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
+			node.querySelector(".points-de-vie-du-boss").innerHTML = "Points de vie du boss: " + niveau.current_hp + "/" + niveau.hp;
+			node.querySelector(".type").innerHTML = "Type: " + niveau.type;
+
+			document.getElementById("boite-de-niveaux").appendChild(node);
 		});
 
-		// traiter();
-
-		// faire du dom pour afficher???
-		// document.querySelector(".sectionQuestion").innerHTML = data;
-		// UTILISER TEMPLATE POUR AFFICHAGE
-		// VOIR le dossier "_TEMPLATE JS"
+		let delai = 2200;
+		setTimeout(traiter, delai);
 	})
 }

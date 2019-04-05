@@ -9,10 +9,11 @@
 
 	<script src="javascript/home.js"></script>
 	<h1>Bienvenue au Lobby!</h1>
+	<div id="boite-de-niveaux"></div>
 	<template id="template-des-niveaux">
 		<div class="cadre-niveau">
 			<h2 class="nom"></h2>
-			<div class="valeur-du-niveau"></div>
+			<h2 class="valeur-du-niveau"></h2>
 			<div class="nb-de-joueurs"></div>
 			<div class="points-de-vie-du-boss"></div>
 			<div class="type"></div>

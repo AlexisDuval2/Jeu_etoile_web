@@ -262,6 +262,17 @@ button:hover {
 	z-index: -1;
 }
 
+#boite-de-niveaux {
+	display: flex;
+	flex-wrap: wrap;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	align-items:stretch;
+	justify-content: center;
+	width: 700px;
+	height: 600px;
+}
+
 .cadre-niveau {
 	border:1px solid white;
 	background-color:#555;
@@ -272,11 +283,7 @@ button:hover {
 	box-shadow: 0 0 10px white;
 }
 
-.cadre-niveau .nom {
-	margin-bottom:20px;
-}
-
-.cadre-niveau .hp {
+.cadre-niveau .points-de-vie-du-boss, .cadre-niveau .type {
 	margin-top:30px;
 	font-size:30px;
 	font-weight:bold;

@@ -9,6 +9,13 @@
 			return UserDAO::callAPI("signin", $data);
 		}
 
+		public static function logout($cleDeSession) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+
+			return UserDAO::callAPI("signout", $data);
+		}
+
 		public static function getAvailableGames($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;
