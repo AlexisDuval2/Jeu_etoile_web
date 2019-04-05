@@ -23,9 +23,18 @@ const appelerLaPage = () => {
 		// 	console.log(element.name);
 		// });
 
-		console.log(data);
+		// console.log(data);
 
-		traiter();
+		data.forEach(niveau => {
+			console.log("----------------------------");
+			console.log("Nom du niveau: " + niveau.name);
+			console.log("<niveau " + niveau.level + ">");
+			console.log("Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users);
+			console.log("Points de vie du boss: " + niveau.current_hp + "/" + niveau.hp);
+			console.log("Type: " + niveau.type);
+		});
+
+		// traiter();
 
 		// faire du dom pour afficher???
 		// document.querySelector(".sectionQuestion").innerHTML = data;

@@ -9,7 +9,13 @@
 
 	<script src="javascript/home.js"></script>
 	<h1>Bienvenue au Lobby!</h1>
-	<p>[infos ici]</p>
+	<!-- <template id="liste-de-niveau">
+		<div class="character">
+			<h2></h2>
+			<div class="type"></div>
+			<div class="hp"></div>
+		</div>
+	</template> -->
 
 <?php
 	require_once("partial/footer.php");
