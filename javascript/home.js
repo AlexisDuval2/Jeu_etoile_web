@@ -19,11 +19,20 @@ const appelerLaPage = () => {
 	.then(response => response.json())
 	.then(data => {
 
-		// data.forEach(element => {
-		// 	console.log(element.name);
-		// });
+		// document.getElementById("container").innerHTML = "";
 
-		// console.log(data);
+		// let charHTML = document.querySelector("#character-template").innerHTML;
+
+		// for (var i = 0; i < characters.length; i++) {
+		// 	let node = document.createElement("div");
+		// 	node.innerHTML = charHTML;
+
+		// 	node.querySelector("h2").innerHTML = characters[i].name;
+		// 	node.querySelector(".type").innerHTML = characters[i].type;
+		// 	node.querySelector(".hp").innerHTML = characters[i].hp;
+
+		// 	document.getElementById("container").appendChild(node);
+		// }
 
 		data.forEach(niveau => {
 			console.log("----------------------------");

@@ -261,3 +261,30 @@ button:hover {
 	background-image: url('../images/bg.png');
 	z-index: -1;
 }
+
+.cadre-niveau {
+	border:1px solid white;
+	background-color:#555;
+	padding:30px;
+	text-align:center;
+	margin:0 10px;
+	transition: 1s;
+	box-shadow: 0 0 10px white;
+}
+
+.cadre-niveau .nom {
+	margin-bottom:20px;
+}
+
+.cadre-niveau .hp {
+	margin-top:30px;
+	font-size:30px;
+	font-weight:bold;
+	text-shadow: 0 0 14px black;
+}
+
+.cadre-niveau:hover {
+	cursor:pointer;
+	background-color:#999;
+	box-shadow: 0 0 10px #999;
+}
