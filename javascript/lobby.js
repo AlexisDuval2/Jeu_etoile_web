@@ -1,14 +1,13 @@
 
 window.onload = () => {
-	traiter();
+	let delai = 2200;
+	setTimeout(traiter, delai);
 }
-
-// fonction qui traite les données
 
 // fonction pour appeler la page en utilisant Ajax
 const traiter = () => {
 
-	fetch("ajaxHome.php", {
+	fetch("ajaxLobby.php", {
 		method: "POST",
 		credentials: 'include'
 	})
@@ -23,11 +22,8 @@ const traiter = () => {
 			let node = document.createElement("div");
 			node.setAttribute("class", "cadre-niveau");
 			node.innerHTML = niveauHTML;
-
-			console.log(node.querySelector("nom"));
-
-			node.querySelector(".nom").innerHTML = "nom du niveau: " + niveau.name;
-			node.querySelector(".valeur-du-niveau").innerHTML = "-niveau " + niveau.level + "-";
+			node.querySelector(".nom").innerHTML = "Nom du niveau: " + niveau.name;
+			node.querySelector(".valeur-du-niveau").innerHTML = "Niveau: " + niveau.level;
 			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
 			node.querySelector(".points-de-vie-du-boss").innerHTML = "Points de vie du boss: " + niveau.current_hp + "/" + niveau.hp;
 			node.querySelector(".type").innerHTML = "Type: " + niveau.type;

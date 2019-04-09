@@ -19,7 +19,7 @@
 					$_SESSION["username"] = $_POST["username"];
 					$_SESSION["visibility"] = CommonAction::$VISIBILITY_MEMBER;
 					$_SESSION["cleDeSession"] = $this->cleDeSession;
-					header("location:home.php");
+					header("location:lobby.php");
 					exit();
 				}
 				else {

@@ -2,7 +2,7 @@
 	require_once("action/CommonAction.php");
 	require_once("action/DAO/UserDAO.php");
 
-	class AjaxHomeAction extends CommonAction {
+	class AjaxLobbyAction extends CommonAction {
 		public $result;
 
 		public function __construct() {

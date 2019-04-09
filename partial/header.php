@@ -31,7 +31,7 @@
 					<?php
 						if ($action->isLoggedIn()) {
 					?>
-							<li><a href="home.php">Choisir une partie</a></li>
+							<li><a href="lobby.php">Choisir une partie</a></li>
 							<li><a href="profile.php">Mon profil</a></li>
 					<?php
 						}

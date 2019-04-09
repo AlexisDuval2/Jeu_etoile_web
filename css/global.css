@@ -43,7 +43,7 @@ a:hover {
 }
 
 .container {
-	width: 700px;
+	width: 750px;
 	background-color: black;
 	min-height: 350px;
 	margin: auto;
@@ -93,7 +93,7 @@ a:hover {
 }
 
 .header {
-	width: 750px;
+	width: 800px;
 	margin: 0px auto;
 	margin-bottom: 5px;
 	color: white;
@@ -236,12 +236,12 @@ button {
 	font-weight: 700;
 	height: 32px;
 	padding: 4px 16px;
-	cursor: pointer;
 }
 
 button:hover {
 	background-color: black;
 	color: yellow;
+	cursor: pointer;
 }
 
 #canvasLogout {
@@ -253,11 +253,11 @@ button:hover {
 }
 
 #canvasIndex {
-	width: 900px;
+	width: 1000px;
 	height: 700px;
 	position: absolute;
 	top: 180px;
-	left: calc((100vw - 900px) / 2);
+	left: calc((100vw - 1000px) / 2);
 	background-image: url('../images/bg.png');
 	z-index: -1;
 }
@@ -267,31 +267,39 @@ button:hover {
 	flex-wrap: wrap;
 	overflow-x: hidden;
 	overflow-y: scroll;
-	align-items:stretch;
+	align-items: stretch;
 	justify-content: center;
-	width: 700px;
+	width: 750px;
 	height: 600px;
 }
 
 .cadre-niveau {
-	border:1px solid white;
-	background-color:#555;
-	padding:30px;
-	text-align:center;
-	margin:0 10px;
-	transition: 1s;
-	box-shadow: 0 0 10px white;
+	color: white;
+	border: 1px solid yellow;
+	background-color: rgb(19, 47, 138);
+	background-image: linear-gradient(to right, rgb(17, 18, 97) , rgb(190, 188, 36));
+	padding: 30px;
+	text-align: center;
+	margin: 0 8px;
+	transition: 0.5s;
+	box-shadow: 0 0 10px yellow;
+}
+
+h2.valeur-du-niveau {
+	font-size: 20px;
+	font-weight: 500;
+	letter-spacing: 3.5px;
 }
 
 .cadre-niveau .points-de-vie-du-boss, .cadre-niveau .type {
-	margin-top:30px;
-	font-size:30px;
-	font-weight:bold;
-	text-shadow: 0 0 14px black;
+	font-size: 23px;
+	font-weight: bold;
+	font-style: italic;
+	text-shadow: 0 0 5px rgb(230, 104, 202);
 }
 
 .cadre-niveau:hover {
-	cursor:pointer;
-	background-color:#999;
-	box-shadow: 0 0 10px #999;
+	background-color: rgb(19, 47, 138);
+	box-shadow: 0 0 10px rgb(130, 186, 238);
+	cursor: pointer;
 }
