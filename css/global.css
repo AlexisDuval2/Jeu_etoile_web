@@ -18,9 +18,10 @@ body {
 }
 
 h1 {
-	font-size: 1.3em;
-	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	margin-bottom: 25px;
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 20px;
 }
 
 p {
@@ -245,7 +246,7 @@ button:hover {
 }
 
 #canvasLogout {
-	width: 750px;
+	width: 800px;
 	height: 400px;
 	position: absolute;
 	top: 134px;
@@ -274,26 +275,37 @@ button:hover {
 }
 
 .cadre-niveau {
+	width: 28%;
+	height: 185px;
+	line-height: 25px;
+	padding-top: 52px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
 	color: white;
 	border: 1px solid yellow;
-	background-color: rgb(19, 47, 138);
 	background-image: linear-gradient(to right, rgb(17, 18, 97) , rgb(190, 188, 36));
-	padding: 30px;
-	text-align: center;
-	margin: 0 8px;
-	transition: 0.5s;
+	transition: 1s;
 	box-shadow: 0 0 10px yellow;
 }
 
+.cadre-niveau:nth-of-type(n+4) {
+	margin-top: 40px;
+}
+
+h2.nom {
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 h2.valeur-du-niveau {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 500;
 	letter-spacing: 3.5px;
 }
 
 .cadre-niveau .points-de-vie-du-boss, .cadre-niveau .type {
-	font-size: 23px;
-	font-weight: bold;
+	font-size: 21px;
+	font-weight: 500;
 	font-style: italic;
 	text-shadow: 0 0 5px rgb(230, 104, 202);
 }

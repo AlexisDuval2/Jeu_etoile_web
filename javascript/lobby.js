@@ -22,10 +22,10 @@ const traiter = () => {
 			let node = document.createElement("div");
 			node.setAttribute("class", "cadre-niveau");
 			node.innerHTML = niveauHTML;
-			node.querySelector(".nom").innerHTML = "Nom du niveau: " + niveau.name;
+			node.querySelector(".nom").innerHTML = niveau.name;
 			node.querySelector(".valeur-du-niveau").innerHTML = "Niveau: " + niveau.level;
 			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
-			node.querySelector(".points-de-vie-du-boss").innerHTML = "Points de vie du boss: " + niveau.current_hp + "/" + niveau.hp;
+			node.querySelector(".points-de-vie-du-boss").innerHTML = "HP du boss: " + niveau.current_hp + "/" + niveau.hp;
 			node.querySelector(".type").innerHTML = "Type: " + niveau.type;
 
 			document.getElementById("boite-de-niveaux").appendChild(node);
