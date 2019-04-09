@@ -21,7 +21,6 @@ h1 {
 	font-size: 28px;
 	font-weight: 600;
 	letter-spacing: 1px;
-	margin-bottom: 20px;
 }
 
 p {
@@ -279,18 +278,15 @@ button:hover {
 	height: 185px;
 	line-height: 25px;
 	padding-top: 52px;
+	margin-top: 40px;
 	margin-left: 10px;
 	margin-right: 10px;
 	text-align: center;
 	color: white;
-	border: 1px solid yellow;
 	background-image: linear-gradient(to right, rgb(17, 18, 97) , rgb(190, 188, 36));
 	transition: 1s;
+	border: 1px solid yellow;
 	box-shadow: 0 0 10px yellow;
-}
-
-.cadre-niveau:nth-of-type(n+4) {
-	margin-top: 40px;
 }
 
 h2.nom {
@@ -311,7 +307,8 @@ h2.valeur-du-niveau {
 }
 
 .cadre-niveau:hover {
-	background-color: rgb(19, 47, 138);
-	box-shadow: 0 0 10px rgb(130, 186, 238);
+	background-image: linear-gradient(to right, rgb(92, 20, 68) , rgb(227, 141, 238));
+	border: 1px solid rgb(130, 186, 238);
+	box-shadow: 0 0 50px rgb(130, 186, 238);
 	cursor: pointer;
 }
