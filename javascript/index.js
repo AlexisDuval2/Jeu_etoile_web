@@ -29,26 +29,23 @@ class Etoile {
 		this.hauteur = 9;
 		this.vitesseX = 3;
 		this.vitesseY = 2;
-		this.motionTrailLength = 117;
+		this.longueur = 117;
 		this.positions = [];
 	}
 
-	storeLastPosition(xPos, yPos) {
-		// push an item
+	conserverDernierePosition(xPos, yPos) {
 		this.positions.push({
 			x: xPos,
 			y: yPos
 		});
-
-		//get rid of first item
-		if (this.positions.length > this.motionTrailLength) {
+		if (this.positions.length > this.longueur) {
 			this.positions.shift();
 		}
 	}
 
 	tick() {
 
-		this.storeLastPosition(this.x, this.y);
+		this.conserverDernierePosition(this.x, this.y);
 
 		if (this.x > 0) {
 			this.vitesseX *= -1;
