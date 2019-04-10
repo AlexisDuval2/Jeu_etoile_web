@@ -3,14 +3,12 @@ let canvas = null;
 let ctx = null;
 let imageEtoile = new Image();
 let etoile = null;
-let timer = null;
 
 window.onload = () => {
 	canvas = document.querySelector("#canvasIndex");
 	ctx = canvas.getContext("2d");
 	imageEtoile.src = "images/etoileAccueil.png";
 	etoile = new Etoile();
-	timer = 0;
 
 	tick();
 }

@@ -7,8 +7,8 @@
 	require_once("partial/header.php");
 ?>
 
+	<script src="javascript/login.js"></script>
 	<h1>Connexion</h1>
-
 	<div class="login-form-frame">
 		<form action="login.php" method="post">
 			<?php

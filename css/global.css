@@ -249,6 +249,7 @@ button:hover {
 	position: absolute;
 	top: 134px;
 	left: calc((100vw - 800px) / 2);
+	z-index: 1;
 }
 
 #canvasIndex {
