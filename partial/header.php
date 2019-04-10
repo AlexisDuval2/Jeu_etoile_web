@@ -15,11 +15,7 @@
 				<?php
 					if ($action->isLoggedIn()) {
 				?>
-						<div>
-							[
-							<a href="logout.php">Déconnexion</a>
-							]
-						</div>
+						<div>[<a href="logout.php">Déconnexion</a>]</div>
 				<?php
 					}
 				?>
@@ -38,7 +34,7 @@
 						else {
 					?>
 							<li><a href="login.php">Se connecter</a></li>
-							<?php
+					<?php
 						}
 					?>
 				</ul>

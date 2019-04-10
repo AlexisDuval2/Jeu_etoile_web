@@ -5,14 +5,12 @@
 
 html {
 	color: rgb(230, 104, 202);
-	background-repeat: repeat-x;
-	background-position: bottom center;
-	background-color: yellow;
+	background-image: url(../images/bg_html.png);
 }
 
 body {
 	font-family: 'Segoe UI';
-	background-image: url('../images/gradient.png');
+	background-image: url(../images/gradient.png);
 	background-repeat: repeat-x;
 	background-position: top center;
 }
@@ -21,6 +19,7 @@ h1 {
 	font-size: 28px;
 	font-weight: 600;
 	letter-spacing: 1px;
+	margin-bottom: 15px;
 }
 
 p {
@@ -49,7 +48,7 @@ a:hover {
 	margin: auto;
 	padding: 25px;
 	border: 1px solid green;
-	background-image: url('../images/petite-etoile.png');
+	background-image: url(../images/petite-etoile.png);
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	box-shadow: 0 0 15px rgb(230, 104, 202);
@@ -62,33 +61,33 @@ a:hover {
 @keyframes flashEtoile {
 	0% {
 		background-color: black;
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 	1% {
 		background-image: none;
 		background-color: rgba(0, 0, 0, 0.85);
 	}
 	10% {
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 	30% {
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 	40% {
 		background-color: rgb(10, 44, 54);
 	}
 	79% {
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 	80% {
 		background-image: none;
 		background-color: rgba(0, 0, 0, 0.88);
 	}
 	95% {
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 	100% {
-		background-image: url('../images/petite-etoile.png');
+		background-image: url(../images/petite-etoile.png);
 	}
 }
 
@@ -105,7 +104,7 @@ a:hover {
 	width: 180px;
 	height: 37px;
 	margin-top: 5px;
-	background-image: url('../images/logo.png');
+	background-image: url(../images/logo.png);
 	background-repeat: no-repeat;
 	animation-name: titre;
 	animation-duration: 7.5s;
@@ -249,7 +248,7 @@ button:hover {
 	height: 400px;
 	position: absolute;
 	top: 134px;
-	left: calc((100vw - 750px) / 2);
+	left: calc((100vw - 800px) / 2);
 }
 
 #canvasIndex {
@@ -258,7 +257,6 @@ button:hover {
 	position: absolute;
 	top: 180px;
 	left: calc((100vw - 1000px) / 2);
-	background-image: url('../images/bg.png');
 	z-index: -1;
 }
 
@@ -278,12 +276,13 @@ button:hover {
 	height: 185px;
 	line-height: 25px;
 	padding-top: 52px;
-	margin-top: 40px;
+	margin-top: 30px;
 	margin-left: 10px;
 	margin-right: 10px;
 	text-align: center;
 	color: white;
-	background-image: linear-gradient(to right, rgb(17, 18, 97) , rgb(190, 188, 36));
+	background-image: url(../images/bg_cadre_niveau.png);
+	background-size: cover;
 	transition: 1s;
 	border: 1px solid yellow;
 	box-shadow: 0 0 10px yellow;
@@ -307,7 +306,7 @@ h2.valeur-du-niveau {
 }
 
 .cadre-niveau:hover {
-	background-image: linear-gradient(to right, rgb(92, 20, 68) , rgb(227, 141, 238));
+	background-image: linear-gradient(to right, rgb(133, 34, 111), rgb(133, 34, 111));
 	border: 1px solid rgb(130, 186, 238);
 	box-shadow: 0 0 50px rgb(130, 186, 238);
 	cursor: pointer;
