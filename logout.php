@@ -8,11 +8,11 @@
 ?>
 
 	<script src="javascript/logout.js"></script>
+	<canvas id="canvasLogout"></canvas>
 	<h1>Déconnexion</h1>
 	<div class="logout-frame">
 		Merci, à la prochaine!
 	</div>
-	<canvas id="canvasLogout"></canvas>
 
 <?php
 	require_once("partial/footer.php");

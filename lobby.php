@@ -8,6 +8,7 @@
 ?>
 
 	<script src="javascript/lobby.js"></script>
+	<canvas id="canvasLobby"></canvas>
 	<h1>Bienvenue au Lobby!</h1>
 	<div id="boite-de-niveaux"></div>
 	<template id="template-des-niveaux">

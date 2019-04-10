@@ -22,6 +22,9 @@ window.onload = () => {
 // fonction pour appeler la page en utilisant Ajax
 const traiter = () => {
 
+	document.getElementById("canvasLobby").style.width = "0";
+	document.getElementById("canvasLobby").style.height = "0";
+
 	fetch("ajaxLobby.php", {
 		method: "POST",
 		credentials: 'include'

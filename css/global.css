@@ -197,12 +197,12 @@ a:hover {
 	font-size: 50px;
 	text-align: center;
 	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	animation-name: petiteEtoile2;
+	animation-name: pluieDEtoiles;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-@keyframes petiteEtoile2 {
+@keyframes pluieDEtoiles {
 	0% {
 		transform: translateY(30px);
 	}
@@ -258,6 +258,15 @@ button:hover {
 	top: 180px;
 	left: calc((100vw - 1000px) / 2);
 	z-index: -1;
+}
+
+#canvasLobby {
+	width: 1000px;
+	height: 700px;
+	position: absolute;
+	top: 0px;
+	left: calc((100vw - 1000px) / 2);
+	background-color: bisque;
 }
 
 #boite-de-niveaux {
