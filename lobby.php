@@ -10,6 +10,7 @@
 	<script src="javascript/lobby.js"></script>
 	<canvas id="canvasLobby"></canvas>
 	<h1>Bienvenue au Lobby!</h1>
+	<div id="erreur-choix-partie"></div>
 	<div id="boite-de-niveaux"></div>
 	<template id="template-des-niveaux">
 		<h2 class="nom"></h2>

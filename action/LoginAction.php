@@ -13,7 +13,6 @@
 
 		protected function executeAction() {
 			if (isset($_POST["username"])) {
-
 				$this->cleDeSession = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
 				if (strlen($this->cleDeSession) == 40) {
 					$_SESSION["username"] = $_POST["username"];

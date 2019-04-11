@@ -4,4 +4,4 @@
 	$action = new AjaxEntrerAction();
 	$action->execute();
 
-	echo json_encode($action->result);
+	echo json_encode($action->resultat);

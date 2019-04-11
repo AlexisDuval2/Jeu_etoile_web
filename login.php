@@ -15,7 +15,7 @@
 				if ($action->wrongLogin) {
 					?>
 					<div class="error-div">
-						<strong>Erreur : </strong>
+						<strong>Erreur: </strong>
 						<?= $action->cleDeSession; ?>
 					</div>
 					<?php

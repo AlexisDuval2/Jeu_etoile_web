@@ -43,12 +43,11 @@ const traiter = () => {
 			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
 			node.querySelector(".points-de-vie-du-boss").innerHTML = "HP du boss: " + niveau.current_hp + "/" + niveau.hp;
 			node.querySelector(".type").innerHTML = "Type: " + niveau.type;
+			document.getElementById("boite-de-niveaux").appendChild(node);
 
 			node.onclick = () => {
 				let formData = new FormData();
 				formData.append("idPartie", niveau.id);
-
-				console.log(niveau.id);
 
 				fetch("ajaxEntrer.php", {
 					method: "POST",
@@ -57,11 +56,18 @@ const traiter = () => {
 				})
 				.then(response => response.json())
 				.then(data => {
-					console.log(data);
+					if (data == "GAME_ENTERED") {
+						window.location.href = "jeu.php";
+					}
+					else {
+						node = document.getElementById("erreur-choix-partie");
+						node.setAttribute("class", "error-div");
+						node.style.fontWeight = "bold";
+						node.innerHTML = "Erreur: " + data;
+					}
 				})
 			}
 
-			document.getElementById("boite-de-niveaux").appendChild(node);
 		});
 
 		let delai = 2200;
