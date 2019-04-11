@@ -6,15 +6,15 @@ let etoile = null;
 
 window.onload = () => {
 
+	let delai = 2200;
+	setTimeout(traiter, delai);
+
 	// canvas = document.querySelector("#canvasIndex");
 	// ctx = canvas.getContext("2d");
 	// imageEtoile.src = "images/etoileAccueil.png";
 	// etoile = new Etoile();
 
 	// tick();
-
-	let delai = 2200;
-	setTimeout(traiter, delai);
 }
 
 // fonction pour appeler la page en utilisant Ajax
@@ -35,7 +35,7 @@ const traiter = () => {
 		let niveauHTML = document.querySelector("#template-des-niveaux").innerHTML;
 
 		data.forEach(niveau => {
-			let node = document.createElement("div");
+			node = document.createElement("div");
 			node.setAttribute("class", "cadre-niveau");
 			node.innerHTML = niveauHTML;
 			node.querySelector(".nom").innerHTML = niveau.name;
@@ -43,6 +43,23 @@ const traiter = () => {
 			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
 			node.querySelector(".points-de-vie-du-boss").innerHTML = "HP du boss: " + niveau.current_hp + "/" + niveau.hp;
 			node.querySelector(".type").innerHTML = "Type: " + niveau.type;
+
+			node.onclick = () => {
+				let formData = new FormData();
+				formData.append("idPartie", niveau.id);
+
+				console.log(niveau.id);
+
+				fetch("ajaxEntrer.php", {
+					method: "POST",
+					credentials: "include",
+					body: formData
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log(data);
+				})
+			}
 
 			document.getElementById("boite-de-niveaux").appendChild(node);
 		});

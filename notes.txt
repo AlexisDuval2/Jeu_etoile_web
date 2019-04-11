@@ -1,0 +1,5 @@
+
+
+IMPORTANT
+style.pointerEvents = "none"
+style.pointerEvents = "auto"

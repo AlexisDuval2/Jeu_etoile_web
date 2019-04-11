@@ -10,6 +10,6 @@
 		}
 
 		protected function executeAction() {
-			$this->result = UserDAO::obtenirPartiesDisponibles($_SESSION["cleDeSession"]);
+			$this->result = UserDAO::obtenirEtatDeLaPartie($_SESSION["cleDeSession"]);
 		}
 	}

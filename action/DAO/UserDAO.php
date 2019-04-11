@@ -16,11 +16,26 @@
 			return UserDAO::callAPI("signout", $data);
 		}
 
-		public static function getAvailableGames($cleDeSession) {
+		public static function obtenirPartiesDisponibles($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;
 
 			return UserDAO::callAPI("list", $data);
+		}
+
+		public static function entrerDansUnePartie($cleDeSession, $idPartie) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+			$data["id"] = $idPartie;
+
+			return UserDAO::callAPI("enter", $data);
+		}
+
+		public static function obtenirEtatDeLaPartie($cleDeSession) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+
+			return UserDAO::callAPI("state", $data);
 		}
 
 		public static function callAPI($service, array $data) {

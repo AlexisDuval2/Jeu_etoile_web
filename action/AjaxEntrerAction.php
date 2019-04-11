@@ -2,7 +2,7 @@
 	require_once("action/CommonAction.php");
 	require_once("action/DAO/UserDAO.php");
 
-	class AjaxLobbyAction extends CommonAction {
+	class AjaxEntrerAction extends CommonAction {
 		public $result;
 
 		public function __construct() {
@@ -10,6 +10,6 @@
 		}
 
 		protected function executeAction() {
-			$this->result = UserDAO::obtenirPartiesDisponibles($_SESSION["cleDeSession"]);
+			$this->result = UserDAO::entrerDansUnePartie($_SESSION["cleDeSession"], $_POST["idPartie"]);
 		}
 	}
