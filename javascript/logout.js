@@ -9,7 +9,9 @@ window.onload = () => {
 	ctx = canvas.getContext("2d");
 	imageEtoile.src = "images/petite-etoile2.png";
 
-	tick();
+	if (imageEtoile.complete) {
+		tick();
+	}
 }
 
 const tick = () => {

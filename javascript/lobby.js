@@ -33,12 +33,12 @@ const traiter = () => {
 		document.getElementById("boite-de-niveaux").innerHTML = "";
 
 		let niveauHTML = document.querySelector("#template-des-niveaux").innerHTML;
-
+		let noDuNiveau = 1;
 		data.forEach(niveau => {
 			node = document.createElement("div");
 			node.setAttribute("class", "cadre-niveau");
 			node.innerHTML = niveauHTML;
-			node.querySelector(".nom").innerHTML = niveau.name;
+			node.querySelector(".nom").innerHTML = noDuNiveau + ". " + niveau.name;
 			node.querySelector(".valeur-du-niveau").innerHTML = "Niveau: " + niveau.level;
 			node.querySelector(".nb-de-joueurs").innerHTML = "Nombre de joueurs: " + niveau.nb + "/" + niveau.max_users;
 			node.querySelector(".points-de-vie-du-boss").innerHTML = "HP du boss: " + niveau.current_hp + "/" + niveau.hp;
@@ -68,6 +68,7 @@ const traiter = () => {
 				})
 			}
 
+			noDuNiveau++;
 		});
 
 		let delai = 2200;

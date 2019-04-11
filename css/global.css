@@ -34,7 +34,7 @@ a {
 
 a:hover {
 	text-decoration: underline;
-	color: yellow;
+	color: rgb(255, 210, 25);
 }
 
 .clear {
@@ -190,7 +190,7 @@ a:hover {
 	border-radius: 3px;
 	border: 1px solid #6b5736;
 	padding: 20px;
-	background: linear-gradient(rgb(28, 139, 173), yellow);
+	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
 }
 
 .logout-frame {
@@ -239,7 +239,7 @@ button {
 
 button:hover {
 	background-color: black;
-	color: yellow;
+	color: rgb(255, 210, 25);
 	cursor: pointer;
 }
 
@@ -294,8 +294,16 @@ button:hover {
 	background-image: url(../images/bg_cadre_niveau.png);
 	background-size: cover;
 	transition: 1s;
-	border: 1px solid yellow;
-	box-shadow: 0 0 10px yellow;
+	border: 1px solid rgb(130, 186, 238);
+	box-shadow: 0 0 10px rgb(130, 186, 238);
+}
+
+.cadre-niveau:hover {
+	background-image: linear-gradient(to right, rgb(92, 24, 77), rgb(92, 24, 77));
+	color: rgb(255, 210, 25);
+	border: 1px solid rgb(255, 210, 25);
+	box-shadow: 0 0 50px rgb(255, 210, 25);
+	cursor: pointer;
 }
 
 h2.nom {
@@ -313,11 +321,4 @@ h2.valeur-du-niveau {
 	font-weight: 500;
 	font-style: italic;
 	text-shadow: 0 0 5px rgb(230, 104, 202);
-}
-
-.cadre-niveau:hover {
-	background-image: linear-gradient(to right, rgb(133, 34, 111), rgb(133, 34, 111));
-	border: 1px solid rgb(130, 186, 238);
-	box-shadow: 0 0 50px rgb(130, 186, 238);
-	cursor: pointer;
 }

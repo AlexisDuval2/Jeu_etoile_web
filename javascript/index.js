@@ -10,7 +10,9 @@ window.onload = () => {
 	imageEtoile.src = "images/etoileAccueil.png";
 	etoile = new Etoile();
 
-	tick();
+	if (imageEtoile.complete) {
+		tick();
+	}
 }
 
 const tick = () => {
