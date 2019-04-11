@@ -8,9 +8,9 @@
 ?>
 
 	<script src="javascript/index.js"></script>
+	<canvas id="canvasIndex"></canvas>
 	<h1>Le jeu dont vous êtes l'étoile!</h1>
 	<p>[Ceci est une page d'accueil]</p>
-	<canvas id="canvasIndex"></canvas>
 
 <?php
 	require_once("partial/footer.php");

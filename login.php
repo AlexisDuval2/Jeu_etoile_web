@@ -7,6 +7,8 @@
 	require_once("partial/header.php");
 ?>
 
+	<script src="javascript/index.js"></script>
+	<canvas id="canvasIndex"></canvas>
 	<h1>Connexion</h1>
 	<div class="login-form-frame">
 		<form action="login.php" method="post">

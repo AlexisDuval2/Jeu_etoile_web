@@ -1,5 +1,6 @@
 
 
 IMPORTANT
+pour que le bouton pour attaquer ne soit pas utilisable pendant 2 secondes
 style.pointerEvents = "none"
 style.pointerEvents = "auto"

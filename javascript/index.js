@@ -9,10 +9,7 @@ window.onload = () => {
 	ctx = canvas.getContext("2d");
 	imageEtoile.src = "images/etoileAccueil.png";
 	etoile = new Etoile();
-
-	if (imageEtoile.complete) {
-		tick();
-	}
+	tick();
 }
 
 const tick = () => {
@@ -66,7 +63,7 @@ class Etoile {
 		for (let i = 0; i < this.positions.length; i++) {
 			let x = Math.pow(this.positions[i].x, 2) * 0.0035;
 			let y = Math.pow(this.positions[i].y, 2) * 0.0072;
-			ctx.drawImage(imageEtoile, x, y, i*0.15, i*0.08);
+			ctx.drawImage(imageEtoile, x, y, i * 0.15, i * 0.08);
 		}
 	}
 }
