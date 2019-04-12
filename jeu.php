@@ -5,7 +5,13 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/jeu.js"></script>
-	<canvas id="canvasJeu"></canvas>
-	<h1>h1</h1>
+	<div id="jeu-menu-haut">
+		<p></p>
+	</div>
+	<div id="jeu-milieu">
+		<canvas id="canvasJeu"></canvas>
+		<div id="menu-a-droite"></div>
+	</div>
+	<div id="jeu-menu-bas"></div>
 <?php
 	require_once("partial/footer.php");

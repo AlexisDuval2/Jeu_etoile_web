@@ -26,7 +26,7 @@ const traiter = () => {
 	.then(response => response.json())
 	.then(data => {
 
-		if (data == "EMPTY_KEY" || data == "USER_NOT_FOUND" || data == "USER_IS_BANNED" || data == "TOO_MANY_CALLS_BAN") {
+		if (data=="EMPTY_KEY" || data=="USER_NOT_FOUND" || data=="USER_IS_BANNED" || data=="TOO_MANY_CALLS_BAN") {
 			window.location.href = "logout.php";
 		}
 		else {

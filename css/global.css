@@ -354,3 +354,32 @@ h2.valeur-du-niveau {
 	left: calc((100vw - 1000px) / 2);
 	background-color: bisque;
 }
+
+#canvasJeu {
+	width: 86%;
+	background-color: bisque;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ Cadre du jeu
+----------------- */
+#jeu-menu-haut {
+	background-color: white;
+	height: 14%;
+}
+
+#jeu-milieu {
+	display: flex;
+	flex-wrap: wrap;
+	height: 73%;
+}
+
+#jeu-menu-bas {
+	background-color: white;
+	height: 10%;
+}
+
+#menu-a-droite {
+	background-color: lightblue;
+	width: 14%;
+}
