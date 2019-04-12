@@ -5,6 +5,10 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/jeu.js"></script>
+	<div id="boss">
+		<div id="infos-du-boss">Nom du boss (niveau)</div>
+		<div id="hp-du-boss"></div>
+	</div>
 	<div id="jeu-menu-haut">
 		<p></p>
 	</div>

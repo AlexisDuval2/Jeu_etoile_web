@@ -41,6 +41,8 @@ const traiter = () => {
 		}
 		else {
 
+			console.log(data);
+
 			node = document.getElementById("jeu-menu-haut");
 
 			let tiret = "-";
@@ -69,38 +71,24 @@ const traiter = () => {
 
 
 
-			// game:
-			// 	game.attacked: true
-			// 	game.level: "0"
-			// 	game.hp / game.max_hp
-			//  other_players.length / game.max_users
-			// 	game.name: "Void 1"
-			// 	game.type: "Melee"
+			// game.name ( game.level )
+			// game.hp / game.max_hp
 
-			// player:
-			// 	hp: 28
-			// 	level: 1
-			// 	max_hp: 28
-			// 	max_mp: 6
-			// 	mp: 6
-			// 	name: "Gribouillis"
-			// 	skills: Array [ {…} ]
-			// 	type: "Melee"
-			// 	victories: 0
+			// player.hp / player.max_hp
+			// player.mp / player.max_mp
+			// délai d'action...
+			// 3 boutons
 
-			// other_players:
-			// 	0:
-			// 		attacked: "--"
-			// 		hp: 25
-			// 		level: "6"
-			// 		max_hp: 25
-			// 		max_mp: 15
-			// 		mp: 15
-			// 		name: "SimonAlpha"
-			// 		type: "Melee"
-			// 		victories: "33"
-			// 		welcome_text: "Bien le bonjour"
+			// un sprite pour chaque allié...
 
+			// other_players.length / game.max_users
+
+			// welcome_text: "Bien le bonjour" // position absolute!
+			// other_players[i].name
+			// other_players[i].hp / other_players[i].max_hp
+
+			// animation si boss attaque:
+			// 	game.attacked
 		}
 		let delai = 2200;
 		setTimeout(traiter, delai);
