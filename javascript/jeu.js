@@ -40,52 +40,32 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
-
-			console.log(data);
-
-			node = document.getElementById("jeu-menu-haut");
-
-			let tiret = "-";
-			node.innerHTML = "<p>";
-			node.innerHTML += data.game.attacked + tiret;
-			node.innerHTML += data.game.hp + tiret;
-			node.innerHTML += data.game.last_target + tiret;
-			node.innerHTML += data.game.level + tiret;
-			node.innerHTML += data.game.max_hp + tiret;
-			node.innerHTML += data.game.max_users + tiret;
-			node.innerHTML += data.game.name + tiret;
-			node.innerHTML += data.game.type;
-			node.innerHTML += "</p>";
-
-
-// Dans une partie, faire afficher le HP actuel du « boss »
-
-// infos minimales de votre personnage:
-// hp
-// mp
-// délai d’action (cooldown)
-// ses 3 pouvoirs (des boutons que l’on peut cliquer)
-
-// afficher un sprite pour chaque allié
-// afficher au moins 2 informations par allié (son nom, welcome text, hp, mp, etc.)
-
-
-
 			// game.name ( game.level )
 			// game.hp / game.max_hp
 
-			// player.hp / player.max_hp
-			// player.mp / player.max_mp
-			// délai d'action...
-			// 3 boutons
+			// afficher 3 boutons
+			// afficher délai d'action...
 
-			// un sprite pour chaque allié...
+			node = document.getElementById("nb-allies");
+			node.innerHTML = "<p>";
+			node.innerHTML += data.other_players.length + "/" + data.game.max_users;
+			node.innerHTML += "</p>";
 
-			// other_players.length / game.max_users
-
-			// welcome_text: "Bien le bonjour" // position absolute!
 			// other_players[i].name
 			// other_players[i].hp / other_players[i].max_hp
+			// other_players[i].name
+			// other_players[i].hp / other_players[i].max_hp
+			// other_players[i].name
+			// other_players[i].hp / other_players[i].max_hp
+			// other_players[i].name
+			// other_players[i].hp / other_players[i].max_hp
+
+			// player.name
+			// player.hp / player.max_hp
+			// player.mp / player.max_mp
+
+			// other_players[i].welcome_text // position absolute!
+			// un sprite pour chaque allié...
 
 			// animation si boss attaque:
 			// 	game.attacked

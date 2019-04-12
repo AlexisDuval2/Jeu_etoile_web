@@ -10,14 +10,18 @@
 		<div id="hp-du-boss"></div>
 	</div>
 	<div id="jeu-menu-haut">
-		<p></p>
+		<div id="nb-allies"></div>
+		<div id="allie1"></div>
+		<div id="allie2"></div>
+		<div id="allie3"></div>
+		<div id="allie4"></div>
 	</div>
 	<div id="jeu-milieu">
 		<canvas id="canvasJeu"></canvas>
 		<div id="menu-a-droite">
-			<div class="attaque">attaque1</div>
-			<div class="attaque">attaque2</div>
-			<div class="attaque">attaque3</div>
+			<div id="bouton1">attaque1</div>
+			<div id="bouton2">attaque2</div>
+			<div id="bouton3">attaque3</div>
 		</div>
 	</div>
 	<div id="jeu-menu-bas"></div>
