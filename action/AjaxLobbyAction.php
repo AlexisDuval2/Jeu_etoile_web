@@ -4,13 +4,13 @@
 
 	class AjaxLobbyAction extends CommonAction {
 
-		public $result;
+		public $resultat;
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
 		}
 
 		protected function executeAction() {
-			$this->result = UserDAO::obtenirPartiesDisponibles($_SESSION["cleDeSession"]);
+			$this->resultat = UserDAO::obtenirPartiesDisponibles($_SESSION["cleDeSession"]);
 		}
 	}

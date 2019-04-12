@@ -1,3 +1,7 @@
+/* -------------------------------------------------------------------------------------------------------------------
+ Section générale
+----------------- */
+
 * {
 	margin: 0px;
 	padding: 0px;
@@ -15,81 +19,9 @@ body {
 	background-position: top center;
 }
 
-h1 {
-	font-size: 28px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	margin-bottom: 15px;
-}
-
-p {
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-}
-
-a:hover {
-	text-decoration: underline;
-	color: rgb(255, 210, 25);
-}
-
-.clear {
-	clear: both;
-}
-
-.container {
-	width: 750px;
-	background-color: black;
-	min-height: 350px;
-	margin: auto;
-	padding: 25px;
-	border: 1px solid green;
-	background-image: url(../images/petite-etoile.png);
-	background-repeat: no-repeat;
-	background-position: bottom right;
-	box-shadow: 0 0 15px rgb(230, 104, 202);
-	border-radius: 3px;
-	animation-name: flashEtoile;
-	animation-duration: 2s;
-	animation-iteration-count: infinite;
-}
-
-@keyframes flashEtoile {
-	0% {
-		background-color: black;
-		background-image: url(../images/petite-etoile.png);
-	}
-	1% {
-		background-image: none;
-		background-color: rgba(0, 0, 0, 0.85);
-	}
-	10% {
-		background-image: url(../images/petite-etoile.png);
-	}
-	30% {
-		background-image: url(../images/petite-etoile.png);
-	}
-	40% {
-		background-color: rgb(10, 44, 54);
-	}
-	79% {
-		background-image: url(../images/petite-etoile.png);
-	}
-	80% {
-		background-image: none;
-		background-color: rgba(0, 0, 0, 0.88);
-	}
-	95% {
-		background-image: url(../images/petite-etoile.png);
-	}
-	100% {
-		background-image: url(../images/petite-etoile.png);
-	}
-}
+/* -------------------------------------------------------------------------------------------------------------------
+ En-tête des pages
+----------------- */
 
 .header {
 	width: 800px;
@@ -158,6 +90,94 @@ a:hover {
 	width: 750px;
 }
 
+/* -------------------------------------------------------------------------------------------------------------------
+ Boîte principale au milieu de la page
+----------------- */
+
+.container {
+	width: 750px;
+	background-color: black;
+	min-height: 350px;
+	margin: auto;
+	padding: 25px;
+	border: 1px solid green;
+	background-image: url(../images/petite-etoile.png);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	box-shadow: 0 0 15px rgb(230, 104, 202);
+	border-radius: 3px;
+	animation-name: flashEtoile;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes flashEtoile {
+	0% {
+		background-color: black;
+		background-image: url(../images/petite-etoile.png);
+	}
+	1% {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.85);
+	}
+	10% {
+		background-image: url(../images/petite-etoile.png);
+	}
+	30% {
+		background-image: url(../images/petite-etoile.png);
+	}
+	40% {
+		background-color: rgb(10, 44, 54);
+	}
+	79% {
+		background-image: url(../images/petite-etoile.png);
+	}
+	80% {
+		background-image: none;
+		background-color: rgba(0, 0, 0, 0.88);
+	}
+	95% {
+		background-image: url(../images/petite-etoile.png);
+	}
+	100% {
+		background-image: url(../images/petite-etoile.png);
+	}
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ Divers
+----------------- */
+
+h1 {
+	font-size: 28px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 15px;
+}
+
+p {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: rgb(255, 210, 25);
+}
+
+.clear {
+	clear: both;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ Formulaire
+----------------- */
+
 .form-label {
 	float: left;
 	width: 150px;
@@ -193,16 +213,38 @@ a:hover {
 	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
 }
 
+button {
+	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
+	color: #333;
+	background-color: rgb(230, 104, 202);
+	border-radius: 3px;
+	border: none;
+	font-size: 16px;
+	font-weight: 700;
+	height: 32px;
+	padding: 4px 16px;
+}
+
+button:hover {
+	background-color: black;
+	color: rgb(255, 210, 25);
+	cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ Logout
+----------------- */
+
 .logout-frame {
 	font-size: 50px;
 	text-align: center;
 	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	animation-name: pluieDEtoiles;
+	animation-name: logout;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-@keyframes pluieDEtoiles {
+@keyframes logout {
 	0% {
 		transform: translateY(30px);
 	}
@@ -225,50 +267,9 @@ a:hover {
 	}
 }
 
-button {
-	box-shadow: rgba(0, 0, 0, 1) 0 0px 2px 0;
-	color: #333;
-	background-color: rgb(230, 104, 202);
-	border-radius: 3px;
-	border: none;
-	font-size: 16px;
-	font-weight: 700;
-	height: 32px;
-	padding: 4px 16px;
-}
-
-button:hover {
-	background-color: black;
-	color: rgb(255, 210, 25);
-	cursor: pointer;
-}
-
-#canvasLogout {
-	width: 800px;
-	height: 400px;
-	position: absolute;
-	top: 134px;
-	left: calc((100vw - 800px) / 2);
-	z-index: 1;
-}
-
-#canvasIndex {
-	width: 1000px;
-	height: 700px;
-	position: absolute;
-	top: 180px;
-	left: calc((100vw - 1000px) / 2);
-	z-index: -1;
-}
-
-#canvasLobby {
-	width: 1000px;
-	height: 700px;
-	position: absolute;
-	top: 0px;
-	left: calc((100vw - 1000px) / 2);
-	background-color: bisque;
-}
+/* -------------------------------------------------------------------------------------------------------------------
+ Boîte qui contient tous les niveaux (lobby)
+----------------- */
 
 #boite-de-niveaux {
 	display: flex;
@@ -321,4 +322,35 @@ h2.valeur-du-niveau {
 	font-weight: 500;
 	font-style: italic;
 	text-shadow: 0 0 5px rgb(230, 104, 202);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ Canvas
+----------------- */
+
+#canvasLogout {
+	width: 800px;
+	height: 400px;
+	position: absolute;
+	top: 134px;
+	left: calc((100vw - 800px) / 2);
+	z-index: 1;
+}
+
+#canvasIndex {
+	width: 1000px;
+	height: 700px;
+	position: absolute;
+	top: 180px;
+	left: calc((100vw - 1000px) / 2);
+	z-index: -1;
+}
+
+#canvasLobby {
+	width: 1000px;
+	height: 700px;
+	position: absolute;
+	top: 0px;
+	left: calc((100vw - 1000px) / 2);
+	background-color: bisque;
 }
