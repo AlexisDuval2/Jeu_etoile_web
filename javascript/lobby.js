@@ -5,19 +5,15 @@ let imageEtoile = new Image();
 let etoile = null;
 
 window.onload = () => {
-
 	let delai = 2200;
 	setTimeout(traiter, delai);
-
 	// canvas = document.querySelector("#canvasIndex");
 	// ctx = canvas.getContext("2d");
 	// imageEtoile.src = "images/etoileAccueil.png";
 	// etoile = new Etoile();
-
 	// tick();
 }
 
-// fonction pour appeler la page en utilisant Ajax
 const traiter = () => {
 
 	document.getElementById("canvasLobby").style.width = "0";
@@ -34,6 +30,7 @@ const traiter = () => {
 
 		let niveauHTML = document.querySelector("#template-des-niveaux").innerHTML;
 		let noDuNiveau = 1;
+
 		data.forEach(niveau => {
 			node = document.createElement("div");
 			node.setAttribute("class", "cadre-niveau");
@@ -46,6 +43,7 @@ const traiter = () => {
 			document.getElementById("boite-de-niveaux").appendChild(node);
 
 			node.onclick = () => {
+
 				let formData = new FormData();
 				formData.append("idPartie", niveau.id);
 
@@ -67,7 +65,6 @@ const traiter = () => {
 					}
 				})
 			}
-
 			noDuNiveau++;
 		});
 
@@ -108,18 +105,10 @@ class Etoile {
 
 		this.conserverDernierePosition(this.x, this.y);
 
-		if (this.x > 0) {
-			this.vitesseX *= -1;
-		}
-		if (this.x < canvas.width - this.largeur) {
-			this.vitesseX *= -1;
-		}
-		if (this.y > 0) {
-			this.vitesseY *= -1;
-		}
-		if (this.y < canvas.height - this.hauteur) {
-			this.vitesseY *= -1;
-		}
+		if (this.x > 0) {this.vitesseX *= -1;}
+		if (this.x < canvas.width - this.largeur) {this.vitesseX *= -1;}
+		if (this.y > 0) {this.vitesseY *= -1;}
+		if (this.y < canvas.height - this.hauteur) {this.vitesseY *= -1;}
 
 		this.x += this.vitesseX;
 		this.y += this.vitesseY;

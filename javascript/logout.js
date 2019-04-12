@@ -12,6 +12,7 @@ window.onload = () => {
 }
 
 const tick = () => {
+
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	if (Math.random() < 0.4) {

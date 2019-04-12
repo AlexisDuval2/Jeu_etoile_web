@@ -3,6 +3,7 @@
 	require_once("action/DAO/UserDAO.php");
 
 	class AjaxEntrerAction extends CommonAction {
+
 		public $resultat = false;
 
 		public function __construct() {

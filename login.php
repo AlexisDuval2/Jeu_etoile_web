@@ -1,12 +1,9 @@
 <?php
 	require_once("action/LoginAction.php");
-
 	$action = new LoginAction();
 	$action->execute();
-
 	require_once("partial/header.php");
 ?>
-
 	<script src="javascript/index.js"></script>
 	<canvas id="canvasIndex"></canvas>
 	<h1>Connexion</h1>
@@ -22,7 +19,6 @@
 					<?php
 				}
 			?>
-
 			<div class="form-label">
 				<label for="username">Nom d'usager : </label>
 			</div>
@@ -30,7 +26,6 @@
 				<input type="text" name="username" id="username" />
 			</div>
 			<div class="form-separator"></div>
-
 			<div class="form-label">
 				<label for="password">Mot de passe : </label>
 			</div>
@@ -38,10 +33,7 @@
 				<input type="password" name="pwd" id="password" />
 			</div>
 			<div class="form-separator"></div>
-
-			<div class="form-label">
-				&nbsp;
-			</div>
+			<div class="form-label">&nbsp;</div>
 			<div class="form-input">
 				<button type="submit">Connexion</button>
 			</div>

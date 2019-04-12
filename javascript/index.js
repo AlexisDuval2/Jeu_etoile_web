@@ -19,6 +19,7 @@ const tick = () => {
 }
 
 class Etoile {
+
 	constructor() {
 		this.x = canvas.width / 2;
 		this.y = 1;
@@ -41,21 +42,11 @@ class Etoile {
 	}
 
 	tick() {
-
 		this.conserverDernierePosition(this.x, this.y);
-
-		if (this.x > 0) {
-			this.vitesseX *= -1;
-		}
-		if (this.x < canvas.width - this.largeur) {
-			this.vitesseX *= -1;
-		}
-		if (this.y > 0) {
-			this.vitesseY *= -1;
-		}
-		if (this.y < canvas.height - this.hauteur) {
-			this.vitesseY *= -1;
-		}
+		if (this.x > 0) {this.vitesseX *= -1;}
+		if (this.x < canvas.width - this.largeur) {this.vitesseX *= -1;}
+		if (this.y > 0) {this.vitesseY *= -1;}
+		if (this.y < canvas.height - this.hauteur) {this.vitesseY *= -1;}
 
 		this.x += this.vitesseX;
 		this.y += this.vitesseY;

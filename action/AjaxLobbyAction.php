@@ -3,6 +3,7 @@
 	require_once("action/DAO/UserDAO.php");
 
 	class AjaxLobbyAction extends CommonAction {
+
 		public $result;
 
 		public function __construct() {

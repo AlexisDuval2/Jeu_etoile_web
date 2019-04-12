@@ -3,6 +3,7 @@
 	require_once("action/DAO/UserDAO.php");
 
 	class LogoutAction extends CommonAction {
+
 		public $result;
 
 		public function __construct() {
@@ -19,6 +20,6 @@
 				session_destroy();
 				session_start();
 				$_SESSION["visibility"] = CommonAction::$VISIBILITY_PUBLIC;
-				}
+			}
 		}
 	}

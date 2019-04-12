@@ -5,21 +5,18 @@
 			$data = [];
 			$data["username"] = $username;
 			$data["pwd"] = $password;
-
 			return UserDAO::callAPI("signin", $data);
 		}
 
 		public static function logout($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;
-
 			return UserDAO::callAPI("signout", $data);
 		}
 
 		public static function obtenirPartiesDisponibles($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;
-
 			return UserDAO::callAPI("list", $data);
 		}
 
@@ -27,21 +24,17 @@
 			$data = [];
 			$data["key"] = $cleDeSession;
 			$data["id"] = $idPartie;
-
 			return UserDAO::callAPI("enter", $data);
 		}
 
 		public static function obtenirEtatDeLaPartie($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;
-
 			return UserDAO::callAPI("state", $data);
 		}
 
 		public static function callAPI($service, array $data) {
-
 			$apiURL = "https://apps-de-cours.com/web-sirius/server/api/" . $service . ".php";
-
 			$options = array(
 				'http' => array(
 					'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -51,12 +44,10 @@
 			);
 			$context  = stream_context_create($options);
 			$result = file_get_contents($apiURL, false, $context);
-
 			if (strpos($result, "<br") !== false) {
 				var_dump($result);
 				exit;
 			}
-
 			return json_decode($result);
 		}
 	}
