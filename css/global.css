@@ -380,6 +380,16 @@ h2.valeur-du-niveau {
 }
 
 #menu-a-droite {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background-color: lightblue;
 	width: 14%;
+}
+
+.attaque {
+	width: 100%;
+	height: 25%;
+	margin: auto;
+	background-color: aquamarine;
 }

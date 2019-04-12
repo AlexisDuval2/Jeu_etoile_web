@@ -10,7 +10,11 @@
 	</div>
 	<div id="jeu-milieu">
 		<canvas id="canvasJeu"></canvas>
-		<div id="menu-a-droite"></div>
+		<div id="menu-a-droite">
+			<div class="attaque">attaque1</div>
+			<div class="attaque">attaque2</div>
+			<div class="attaque">attaque3</div>
+		</div>
 	</div>
 	<div id="jeu-menu-bas"></div>
 <?php
