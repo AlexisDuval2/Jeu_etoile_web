@@ -5,7 +5,7 @@ let imageEtoile = new Image();
 let etoile = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
-const delaiCadre = 5;
+const delaiCadre = 12;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -19,7 +19,7 @@ window.onload = () => {
 }
 
 const agrandirCadre = () => {
-	tailleCadre += 5;
+	tailleCadre += 2;
 	if (tailleCadre <= tailleFinaleDuCadre) {
 		document.querySelector(".container").style.height = tailleCadre + "px";
 		setTimeout(agrandirCadre, delaiCadre);
@@ -67,15 +67,17 @@ const traiter = () => {
 				node.innerHTML += data.other_players[i].name;
 				node.innerHTML += "</p>";
 				node.innerHTML += "<p>";
-				node.innerHTML += data.other_players[i].hp + "/" + data.other_players[i].max_hp;
+				node.innerHTML += "HP: " + data.other_players[i].hp + "/" + data.other_players[i].max_hp;
 				node.innerHTML += "</p>";
 			}
 
-			// player.name
-			// player.hp / player.max_hp
-			// player.mp / player.max_mp
+			node = document.getElementById("nom-joueur");
+			node.innerHTML = data.player.name + " ";
+			node = document.getElementById("hp-joueur");
+			node.innerHTML = "HP:" + data.player.hp + "/" + data.player.max_hp + " ";
+			node = document.getElementById("mp-joueur");
+			node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
 
-			// other_players[i].welcome_text // position absolute!
 			// un sprite pour chaque allié...
 
 			// animation si boss attaque:

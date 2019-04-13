@@ -356,13 +356,18 @@ h2.valeur-du-niveau {
 }
 
 #canvasJeu {
-	width: 86%;
-	background-color: bisque;
+	width: 84%;
+	background-color: black;
+	border: 2px solid rgb(255, 210, 25);
+	border-radius: 10px;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
  Cadre du jeu
 ----------------- */
+
+/* ---------------------------------
+ MENU BOSS */
 
 #boss {
 	width: 310px;
@@ -374,12 +379,12 @@ h2.valeur-du-niveau {
 	border: 1px solid green;
 	border-radius: 3px;
 	border-bottom: none;
+	font-weight: bold;
 }
 
 #infos-du-boss {
 	width: 100%;
 	height: 30px;
-	font-weight: bold;
 	padding-left: 10px;
 }
 
@@ -391,48 +396,54 @@ h2.valeur-du-niveau {
 #hp-du-boss {
 	width: 100%;
 	height: 23px;
-	background-color: rgb(230, 104, 202);
+	background-image: url(../images/hpBoss.png);
 	color: black;
 	text-align: center;
 }
 
+/* ---------------------------------
+ MENU DU HAUT (infos alliés) */
+
 #jeu-menu-haut {
-	height: 10%;
+	height: 8%;
 	width: 100%;
-	background-color: white;
 	display: flex;
 	justify-content: space-between;
-	background-color: lightblue;
+	margin-top: 12px;
 }
 
 #nb-allies, #allie1, #allie2, #allie3, #allie4 {
 	width: 20%;
 	height: 100%;
 	font-size: 18px;
-	font-weight: bold;
 	color: black;
+	line-height: 15px;
+	font-weight: bold;
 }
 
 #nb-allies {
-	text-align: left;
-	padding-left: 3px;
-	background-color: green;
+	text-align: center;
+	padding-top: 10px;
+	background-image: url(../images/nbAllies.png);
+	color: rgb(0, 2, 110);
+	border: 2px solid black;
+	border-radius: 10px;
 }
 
 #allie1, #allie2, #allie3, #allie4 {
-	background-color: grey;
+	background-color: black;
+	color: rgb(255, 210, 25);
 	text-align: right;
-	line-height: 15px;
 	padding-right: 5px;
-}
-
-#allie2, #allie3, #allie4 {
 	border-style: dashed;
-	border-color: black;
+	border-color: rgb(255, 210, 25);;
 	border-top: none;
 	border-bottom: none;
-	border-right: none;
+	border-left: none;
 }
+
+/* ---------------------------------
+ SECTION DU MILIEU (canvas + boutons) */
 
 #jeu-milieu {
 	display: flex;
@@ -440,23 +451,53 @@ h2.valeur-du-niveau {
 	height: 73%;
 }
 
-#jeu-menu-bas {
-	background-color: white;
-	height: 10%;
-}
-
 #menu-a-droite {
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-between; */
 	justify-content: space-around;
 	width: 14%;
-	background-color: bisque;
+	background-color: black;
+	padding-left: 11px;
 }
 
 #bouton1, #bouton2, #bouton3 {
 	width: calc(316px / 3);
 	height: calc(245px / 3);
-	background-image: url(../images/bgBoutonAttaque.png);
 	background-size: cover;
+}
+
+#bouton1 {
+	background-image: url(../images/bouton1.png);
+}
+
+#bouton2 {
+	background-image: url(../images/bouton2.png);
+}
+
+#bouton3 {
+	background-image: url(../images/bouton3.png);
+}
+
+/* ---------------------------------
+ MENU DU BAS (infos du joueur) */
+
+#jeu-menu-bas {
+	height: 15%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	background-color: black;
+	background-image: url(../images/menuInfosJoueur.png);
+	background-size: cover;
+	color: rgb(255, 210, 25);
+	border: 2px solid black;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+#nom-joueur, #hp-joueur, #mp-joueur{
+	text-align: center;
+	font-size: 32px;
+	font-weight: 500;
+	padding-top: 30px;
 }

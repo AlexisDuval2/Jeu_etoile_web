@@ -26,6 +26,10 @@
 			<div id="bouton3"></div>
 		</div>
 	</div>
-	<div id="jeu-menu-bas"></div>
+	<div id="jeu-menu-bas">
+		<div id="nom-joueur"></div>
+		<div id="hp-joueur"></div>
+		<div id="mp-joueur"></div>
+	</div>
 <?php
 	require_once("partial/footer.php");
