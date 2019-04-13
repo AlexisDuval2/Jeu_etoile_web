@@ -4,11 +4,13 @@
 	$action->execute();
 	require_once("partial/header.php");
 ?>
+	<script src="javascript/TiledImage.js"></script>
 	<script src="javascript/lobby.js"></script>
-	<canvas id="canvasLobby"></canvas>
 	<h1>Bienvenue au Lobby!</h1>
 	<div id="erreur-choix-partie"></div>
-	<div id="boite-de-niveaux"></div>
+	<div id="boite-de-niveaux">
+		<canvas id="canvasLobby"></canvas>
+	</div>
 	<template id="template-des-niveaux">
 		<h2 class="nom"></h2>
 		<h2 class="valeur-du-niveau"></h2>

@@ -1,12 +1,9 @@
 
 let canvas = null;
 let ctx = null;
-let imageEtoile = new Image();
-let etoile = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
-let victoire = false;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -14,6 +11,9 @@ window.onload = () => {
 	document.getElementById("boss").style.display = "none";
 
 	setTimeout(agrandirCadre, delaiCadre);
+
+	canvas = document.getElementById("canvasJeu");
+	ctx = canvas.getContext("2d");
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
@@ -48,6 +48,37 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
+			if (data.game.attacked) {
+				let columnCount = 14;
+				let rowCount = 1;
+				let refreshDelay = 65; // msec
+				let loopColumns = true;
+				let scale = 1;
+				let sprite = new TiledImage("images/leBossAttaque.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
+				sprite.changeRow(0); // One row per animation
+				sprite.changeMinMaxInterval(0, 13); // Loop from which column to which column?
+
+				tick();
+
+				function tick() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					sprite.tick(145, 75, ctx);
+					window.requestAnimationFrame(tick);
+				}
+			}
+			else {
+				let sprite = new TiledImage("images/leBossAttaque.png", 0, 0, 10000, false, 1.0, null);
+				sprite.changeRow(0); // One row per animation
+				sprite.changeMinMaxInterval(0, 13); // Loop from which column to which column?
+
+				tick();
+
+				function tick() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+					sprite.tick(145, 75, ctx);
+					window.requestAnimationFrame(tick);
+				}
+			}
 
 			document.getElementById("boss").style.display = "block";
 			node = document.getElementById("infos-du-boss");
@@ -87,8 +118,6 @@ const traiter = () => {
 
 			// un sprite pour chaque allié...
 
-			// animation si boss attaque:
-			// 	game.attacked
 		}
 		let delai = 2200;
 		setTimeout(traiter, delai);

@@ -355,16 +355,14 @@ h2.valeur-du-niveau {
 }
 
 #canvasLobby {
-	width: 300px;
-	height: 300px;
-	position: absolute;
-	top: 350px;
-	left: calc((100vw - 300px) / 2);
-	background-color: bisque;
+	width: 100%;
+	height: 65%;
+	margin-top: 45px;
 }
 
 #canvasJeu {
-	width: 84%;
+	width: 630px;
+	height: 75%;
 	background-color: black;
 	border: 2px solid rgb(255, 210, 25);
 	border-radius: 10px;
@@ -417,7 +415,7 @@ h2.valeur-du-niveau {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	margin-top: 12px;
+	margin-top: 60px;
 }
 
 #nb-allies, #allie1, #allie2, #allie3, #allie4 {
@@ -456,7 +454,7 @@ h2.valeur-du-niveau {
 #jeu-milieu {
 	display: flex;
 	flex-wrap: wrap;
-	height: 73%;
+	height: 65%;
 }
 
 #menu-a-droite {
@@ -464,6 +462,7 @@ h2.valeur-du-niveau {
 	flex-direction: column;
 	justify-content: space-around;
 	width: 14%;
+	height: 75%;
 	background-color: black;
 	padding-left: 11px;
 }
@@ -500,7 +499,7 @@ h2.valeur-du-niveau {
 	color: rgb(255, 210, 25);
 	border: 2px solid black;
 	border-radius: 10px;
-	margin-top: 10px;
+	margin-top: 6px;
 }
 
 #nom-joueur, #hp-joueur, #mp-joueur{

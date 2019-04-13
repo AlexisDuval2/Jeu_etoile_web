@@ -1,29 +1,48 @@
 
 let canvas = null;
 let ctx = null;
-const imageEtoile = new Image();
-imageEtoile.src = "images/petite.png";
-let etoile = null;
 
 window.onload = () => {
 
-	canvas = document.querySelector("#canvasLobby");
-	ctx = canvas.getContext("2d");
-	etoile = new Etoile();
+	document.querySelector(".container").style.animationName = "aucune";
+	document.querySelector(".container").style.backgroundImage = "none";
 
-	ctx.rotate(0.5);
-	ctx.drawImage(imageEtoile, canvas.x, canvas.y, canvas.width, canvas.height);
+	animer();
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
+}
 
-	// tick();
+const animer = () => {
+	let columnCount = 10;
+	let rowCount = 1;
+	let refreshDelay = 40; // msec
+	let loopColumns = true; // or by row?
+	let scale = 0.5;
+	let sprite = new TiledImage("images/animationEtoileTourne.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
+	sprite.changeRow(0); // One row per animation
+	sprite.changeMinMaxInterval(0, 9); // Loop from which column to which column?
+
+	canvas = document.getElementById("canvasLobby");
+	ctx = canvas.getContext("2d");
+
+	tick();
+
+	function tick() {
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+		sprite.tick(145, 75, ctx);
+		window.requestAnimationFrame(tick);
+	}
 }
 
 const traiter = () => {
 
-	document.getElementById("canvasLobby").style.width = "0";
-	document.getElementById("canvasLobby").style.height = "0";
+	if (document.getElementById("canvasLobby") != null) {
+		document.getElementById("canvasLobby").style.width = "0";
+		document.getElementById("canvasLobby").style.height = "0";
+	}
+	document.querySelector(".container").style.backgroundImage = "images/petite-etoile.png";
+	document.querySelector(".container").style.animationName = "flashEtoile";
 
 	fetch("ajaxLobby.php", {
 		method: "POST",
@@ -80,52 +99,4 @@ const traiter = () => {
 			setTimeout(traiter, delai);
 		}
 	})
-}
-
-const tick = () => {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	etoile.tick();
-	window.requestAnimationFrame(tick);
-}
-
-class Etoile {
-	constructor() {
-		this.x = canvas.width / 2;
-		this.y = 1;
-		this.largeur = 17;
-		this.hauteur = 9;
-		this.vitesseX = 3;
-		this.vitesseY = 2;
-		this.longueur = 117;
-		this.positions = [];
-	}
-
-	conserverDernierePosition(xPos, yPos) {
-		this.positions.push({
-			x: xPos,
-			y: yPos
-		});
-		if (this.positions.length > this.longueur) {
-			this.positions.shift();
-		}
-	}
-
-	tick() {
-
-		this.conserverDernierePosition(this.x, this.y);
-
-		if (this.x > 0) { this.vitesseX *= -1; }
-		if (this.x < canvas.width - this.largeur) { this.vitesseX *= -1; }
-		if (this.y > 0) { this.vitesseY *= -1; }
-		if (this.y < canvas.height - this.hauteur) { this.vitesseY *= -1; }
-
-		this.x += this.vitesseX;
-		this.y += this.vitesseY;
-
-		for (let i = 0; i < this.positions.length; i++) {
-			let x = Math.pow(this.positions[i].x, 2) * 0.0035;
-			let y = Math.pow(this.positions[i].y, 2) * 0.0072;
-			ctx.drawImage(imageEtoile, x, y, i * 0.15, i * 0.08);
-		}
-	}
 }
