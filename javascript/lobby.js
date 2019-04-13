@@ -14,11 +14,14 @@ window.onload = () => {
 }
 
 const animer = () => {
+
+	let x = 145;
+	let y = 50;
 	let columnCount = 10;
 	let rowCount = 1;
 	let refreshDelay = 40; // msec
 	let loopColumns = true; // or by row?
-	let scale = 0.5;
+	let scale = 0.42;
 	let sprite = new TiledImage("images/animationEtoileTourne.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
 	sprite.changeRow(0); // One row per animation
 	sprite.changeMinMaxInterval(0, 9); // Loop from which column to which column?
@@ -30,8 +33,20 @@ const animer = () => {
 
 	function tick() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		sprite.tick(145, 75, ctx);
+		x++;
+		y += 0.65;
+		sprite.tick(x, y, ctx);
 		window.requestAnimationFrame(tick);
+
+
+		// tailleCadre += 2;
+		// if (tailleCadre <= tailleFinaleDuCadre) {
+		// 	document.querySelector(".container").style.height = tailleCadre + "px";
+		// 	setTimeout(agrandirCadre, delaiCadre);
+		// }
+
+
+
 	}
 }
 

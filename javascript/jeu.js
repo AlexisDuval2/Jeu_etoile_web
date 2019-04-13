@@ -49,20 +49,26 @@ const traiter = () => {
 		}
 		else {
 			if (data.game.attacked) {
-				let columnCount = 14;
+
+				let x = 225;
+				let y = 125;
+				let vitesseX = 1.35;
+
+				let columnCount = 28;
 				let rowCount = 1;
 				let refreshDelay = 65; // msec
 				let loopColumns = true;
 				let scale = 1;
 				let sprite = new TiledImage("images/leBossAttaque.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
 				sprite.changeRow(0); // One row per animation
-				sprite.changeMinMaxInterval(0, 13); // Loop from which column to which column?
+				sprite.changeMinMaxInterval(0, 27); // Loop from which column to which column?
 
 				tick();
 
 				function tick() {
 					ctx.clearRect(0, 0, canvas.width, canvas.height);
-					sprite.tick(145, 75, ctx);
+					x -= vitesseX;
+					sprite.tick(x, y, ctx);
 					window.requestAnimationFrame(tick);
 				}
 			}
