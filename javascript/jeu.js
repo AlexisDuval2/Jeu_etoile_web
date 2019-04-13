@@ -45,7 +45,7 @@ const traiter = () => {
 			document.getElementById("boss").style.display = "block";
 			node = document.getElementById("infos-du-boss");
 			node.innerHTML = "<p>";
-			node.innerHTML += data.game.name + " (" + data.game.level +")";
+			node.innerHTML += "Nom de la partie: " + data.game.name + " (" + data.game.level +")";
 			node.innerHTML += "</p>";
 
 			let barrehpBoss = data.game.hp * 100 / data.game.max_hp;

@@ -7,7 +7,9 @@
 	<script src="javascript/jeu.js"></script>
 	<div id="boss">
 		<div id="infos-du-boss"></div>
-		<div id="hp-du-boss"></div>
+		<div id="marge-pr-hp-du-boss">
+			<div id="hp-du-boss"></div>
+		</div>
 	</div>
 	<div id="jeu-menu-haut">
 		<div id="nb-allies"></div>

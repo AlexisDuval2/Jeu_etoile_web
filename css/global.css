@@ -374,14 +374,18 @@ h2.valeur-du-niveau {
 	border: 1px solid green;
 	border-radius: 3px;
 	border-bottom: none;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
 #infos-du-boss {
 	width: 100%;
 	height: 30px;
 	font-weight: bold;
+	padding-left: 10px;
+}
+
+#marge-pr-hp-du-boss {
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #hp-du-boss {
@@ -390,7 +394,6 @@ h2.valeur-du-niveau {
 	background-color: rgb(230, 104, 202);
 	color: black;
 	text-align: center;
-	padding-left: 7px;
 }
 
 #jeu-menu-haut {
