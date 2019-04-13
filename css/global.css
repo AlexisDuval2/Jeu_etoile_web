@@ -366,31 +366,38 @@ h2.valeur-du-niveau {
 
 #boss {
 	width: 310px;
-	height: 55px;
+	height: 60px;
 	position: absolute;
-	top: 105px;
-	left: calc((100vw - 310px) / 2 - 245px);
-	padding: 7px;
-	background-color: yellow;
+	top: 100px;
+	left: calc((100vw - 310px) / 2 - 246px);
+	background-color: black;
+	border: 1px solid green;
+	border-radius: 3px;
+	border-bottom: none;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #infos-du-boss {
 	width: 100%;
-	height: 53%;
+	height: 30px;
+	font-weight: bold;
 }
 
 #hp-du-boss {
 	width: 100%;
-	height: 41%;
-	background-color: red;
+	height: 23px;
+	background-color: rgb(230, 104, 202);
+	color: black;
+	text-align: center;
+	padding-left: 7px;
 }
 
 #jeu-menu-haut {
-	height: 14%;
+	height: 10%;
 	width: 100%;
 	background-color: white;
 	display: flex;
-	/* flex-direction: column; */
 	justify-content: space-between;
 	background-color: lightblue;
 }
@@ -398,18 +405,30 @@ h2.valeur-du-niveau {
 #nb-allies, #allie1, #allie2, #allie3, #allie4 {
 	width: 20%;
 	height: 100%;
+	font-size: 18px;
+	font-weight: bold;
+	color: black;
 }
 
 #nb-allies {
 	text-align: left;
+	padding-left: 3px;
 	background-color: green;
 }
 
 #allie1, #allie2, #allie3, #allie4 {
 	background-color: grey;
-	border-style: dotted;
-	border-width: 5px;
 	text-align: right;
+	line-height: 15px;
+	padding-right: 5px;
+}
+
+#allie2, #allie3, #allie4 {
+	border-style: dashed;
+	border-color: black;
+	border-top: none;
+	border-bottom: none;
+	border-right: none;
 }
 
 #jeu-milieu {
@@ -426,14 +445,15 @@ h2.valeur-du-niveau {
 #menu-a-droite {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	background-color: lightblue;
+	/* justify-content: space-between; */
+	justify-content: space-around;
 	width: 14%;
+	background-color: bisque;
 }
 
-#bouton1, #bouton1, #bouton3 {
-	width: 100%;
-	height: 25%;
-	margin: auto;
-	background-color: aquamarine;
+#bouton1, #bouton2, #bouton3 {
+	width: calc(316px / 3);
+	height: calc(245px / 3);
+	background-image: url(../images/bgBoutonAttaque.png);
+	background-size: cover;
 }

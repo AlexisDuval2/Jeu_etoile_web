@@ -6,7 +6,7 @@
 ?>
 	<script src="javascript/jeu.js"></script>
 	<div id="boss">
-		<div id="infos-du-boss">Nom du boss (niveau)</div>
+		<div id="infos-du-boss"></div>
 		<div id="hp-du-boss"></div>
 	</div>
 	<div id="jeu-menu-haut">
@@ -19,9 +19,9 @@
 	<div id="jeu-milieu">
 		<canvas id="canvasJeu"></canvas>
 		<div id="menu-a-droite">
-			<div id="bouton1">attaque1</div>
-			<div id="bouton2">attaque2</div>
-			<div id="bouton3">attaque3</div>
+			<div id="bouton1"></div>
+			<div id="bouton2"></div>
+			<div id="bouton3"></div>
 		</div>
 	</div>
 	<div id="jeu-menu-bas"></div>

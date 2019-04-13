@@ -10,6 +10,7 @@ const delaiCadre = 5;
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
 	document.querySelector(".container").style.backgroundImage = "none";
+	document.getElementById("boss").style.display = "none";
 
 	setTimeout(agrandirCadre, delaiCadre);
 
@@ -40,25 +41,35 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
-			// game.name ( game.level )
-			// game.hp / game.max_hp
 
-			// afficher 3 boutons
+			document.getElementById("boss").style.display = "block";
+			node = document.getElementById("infos-du-boss");
+			node.innerHTML = "<p>";
+			node.innerHTML += data.game.name + " (" + data.game.level +")";
+			node.innerHTML += "</p>";
+
+			let barrehpBoss = data.game.hp * 100 / data.game.max_hp;
+			node = document.getElementById("hp-du-boss");
+			node.style.width = barrehpBoss + "%";
+			node.innerHTML = data.game.hp + "/" + data.game.max_hp;
+
 			// afficher délai d'action...
 
 			node = document.getElementById("nb-allies");
 			node.innerHTML = "<p>";
-			node.innerHTML += data.other_players.length + "/" + data.game.max_users;
+			node.innerHTML += "Nb d'alliés: " + data.other_players.length + "/" + data.game.max_users;
 			node.innerHTML += "</p>";
 
-			// other_players[i].name
-			// other_players[i].hp / other_players[i].max_hp
-			// other_players[i].name
-			// other_players[i].hp / other_players[i].max_hp
-			// other_players[i].name
-			// other_players[i].hp / other_players[i].max_hp
-			// other_players[i].name
-			// other_players[i].hp / other_players[i].max_hp
+			for (let i = 0; i < data.other_players.length; i++) {
+				const noAllie = i + 1;
+				node = document.getElementById("allie" + noAllie);
+				node.innerHTML = "<p>";
+				node.innerHTML += data.other_players[i].name;
+				node.innerHTML += "</p>";
+				node.innerHTML += "<p>";
+				node.innerHTML += data.other_players[i].hp + "/" + data.other_players[i].max_hp;
+				node.innerHTML += "</p>";
+			}
 
 			// player.name
 			// player.hp / player.max_hp
