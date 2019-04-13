@@ -1,16 +1,22 @@
 
 let canvas = null;
 let ctx = null;
-let imageEtoile = new Image();
+const imageEtoile = new Image();
+imageEtoile.src = "images/petite.png";
 let etoile = null;
 
 window.onload = () => {
+
+	canvas = document.querySelector("#canvasLobby");
+	ctx = canvas.getContext("2d");
+	etoile = new Etoile();
+
+	ctx.rotate(0.5);
+	ctx.drawImage(imageEtoile, canvas.x, canvas.y, canvas.width, canvas.height);
+
 	let delai = 2200;
 	setTimeout(traiter, delai);
-	// canvas = document.querySelector("#canvasIndex");
-	// ctx = canvas.getContext("2d");
-	// imageEtoile.src = "images/etoileAccueil.png";
-	// etoile = new Etoile();
+
 	// tick();
 }
 

@@ -5,7 +5,7 @@ let spriteList = [];
 let imageEtoile = new Image();
 
 window.onload = () => {
-	canvas = document.querySelector("#canvasLogout");
+	canvas = document.getElementById("canvasLogout");
 	ctx = canvas.getContext("2d");
 	imageEtoile.src = "images/petite-etoile2.png";
 	tick();

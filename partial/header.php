@@ -17,6 +17,10 @@
 				?>
 						<div>[<a href="logout.php">Déconnexion</a>]</div>
 				<?php
+					} else {
+				?>
+						<div>SIRIUS | étoile par Alexis</div>
+				<?php
 					}
 				?>
 			</div>

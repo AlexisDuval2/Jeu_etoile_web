@@ -6,6 +6,7 @@ let etoile = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
+let victoire = false;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -34,7 +35,13 @@ const traiter = () => {
 	})
 	.then(response => response.json())
 	.then(data => {
-		if (data=="GAME_NOT_FOUND_WIN" || data=="GAME_NOT_FOUND_LOST" || data=="GAME_NOT_FOUND_NONE") {
+		if (data=="GAME_NOT_FOUND_WIN") {
+			window.location.href = "victoire.php";
+		}
+		else if (data=="GAME_NOT_FOUND_LOST") {
+			window.location.href = "defaite.php";
+		}
+		else if (data=="GAME_NOT_FOUND_NONE") {
 			window.location.href = "lobby.php";
 		}
 		else if (data=="EMPTY_KEY" || data=="USER_NOT_FOUND" ||  data=="TOO_MANY_CALLS_BAN") {

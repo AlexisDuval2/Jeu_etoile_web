@@ -5,7 +5,7 @@ let imageEtoile = new Image();
 let etoile = null;
 
 window.onload = () => {
-	canvas = document.querySelector("#canvasIndex");
+	canvas = document.getElementById("canvasIndex");
 	ctx = canvas.getContext("2d");
 	imageEtoile.src = "images/etoileAccueil.png";
 	etoile = new Etoile();

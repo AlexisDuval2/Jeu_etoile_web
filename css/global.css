@@ -202,7 +202,7 @@ a:hover {
 	color: rgb(116, 30, 97);
 }
 
-.login-form-frame, .logout-frame {
+.login-form-frame {
 	color: black;
 	font-weight: bold;
 	margin: 20px auto;
@@ -232,19 +232,27 @@ button:hover {
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
- Logout
+ Logout + après-partie
 ----------------- */
 
-.logout-frame {
+.logout-frame, .partie-terminee {
+	color: black;
+	font-weight: bold;
+	margin: 20px auto;
+	width: 50%;
+	border-radius: 3px;
+	border: 1px solid #6b5736;
+	padding: 20px;
+	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
 	font-size: 50px;
 	text-align: center;
 	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	animation-name: logout;
+	animation-name: pluieDEtoiles;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-@keyframes logout {
+@keyframes pluieDEtoiles {
 	0% {
 		transform: translateY(30px);
 	}
@@ -332,7 +340,7 @@ h2.valeur-du-niveau {
 	width: 800px;
 	height: 400px;
 	position: absolute;
-	top: 134px;
+	top: 160px;
 	left: calc((100vw - 800px) / 2);
 	z-index: 1;
 }
@@ -347,11 +355,11 @@ h2.valeur-du-niveau {
 }
 
 #canvasLobby {
-	width: 1000px;
-	height: 700px;
+	width: 300px;
+	height: 300px;
 	position: absolute;
-	top: 0px;
-	left: calc((100vw - 1000px) / 2);
+	top: 350px;
+	left: calc((100vw - 300px) / 2);
 	background-color: bisque;
 }
 
