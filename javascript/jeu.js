@@ -1,6 +1,8 @@
 
 let canvas = null;
 let ctx = null;
+let imageBg = new Image();
+let bg = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
@@ -9,11 +11,15 @@ window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
 	document.querySelector(".container").style.backgroundImage = "none";
 	document.getElementById("boss").style.display = "none";
+	imageBg.src = "images/bgJeu1.png";
 
 	setTimeout(agrandirCadre, delaiCadre);
 
 	canvas = document.getElementById("canvasJeu");
 	ctx = canvas.getContext("2d");
+
+	bg = new Bg();
+	tickBg();
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
@@ -128,4 +134,28 @@ const traiter = () => {
 		let delai = 2200;
 		setTimeout(traiter, delai);
 	})
+}
+
+const tickBg = () => {
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	bg.tickBg();
+	window.requestAnimationFrame(tickBg);
+}
+
+class Bg {
+	constructor() {
+		this.x = 0;
+		this.y = 0;
+		this.vitesseX_1 = 3;
+		this.vitesseX_2 = 3;
+		this.vitesseX_3 = 3;
+	}
+
+	tickBg() {
+		this.x -= this.vitesseX_1;
+		if (Math.abs(this.x) >= canvas.width) {
+			this.x = 0;
+		}
+		ctx.drawImage(imageBg, this.x, this.y, canvas.width, canvas.height);
+	}
 }

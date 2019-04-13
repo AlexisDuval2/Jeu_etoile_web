@@ -17,6 +17,8 @@ const animer = () => {
 
 	let x = 145;
 	let y = 50;
+	let vitesseY = 0.65;
+
 	let columnCount = 10;
 	let rowCount = 1;
 	let refreshDelay = 40; // msec
@@ -34,19 +36,9 @@ const animer = () => {
 	function tick() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		x++;
-		y += 0.65;
+		y += vitesseY;
 		sprite.tick(x, y, ctx);
 		window.requestAnimationFrame(tick);
-
-
-		// tailleCadre += 2;
-		// if (tailleCadre <= tailleFinaleDuCadre) {
-		// 	document.querySelector(".container").style.height = tailleCadre + "px";
-		// 	setTimeout(agrandirCadre, delaiCadre);
-		// }
-
-
-
 	}
 }
 
