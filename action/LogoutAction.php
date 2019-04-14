@@ -4,7 +4,7 @@
 
 	class LogoutAction extends CommonAction {
 
-		public $result;
+		public $resultat;
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
@@ -15,7 +15,7 @@
 			$this->pagePublique = CommonAction::$VISIBILITY_PUBLIC;
 
 			if ($_SESSION["visibility"] != $this->pagePublique) {
-				$this->result = UserDAO::logout($_SESSION["cleDeSession"]);
+				$this->resultat = UserDAO::logout($_SESSION["cleDeSession"]);
 				session_unset();
 				session_destroy();
 				session_start();

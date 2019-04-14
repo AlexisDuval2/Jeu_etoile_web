@@ -14,6 +14,12 @@
 			return UserDAO::callAPI("signout", $data);
 		}
 
+		public static function obtenirStatsJoueur($cleDeSession) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+			return UserDAO::callAPI("user-info", $data);
+		}
+
 		public static function obtenirPartiesDisponibles($cleDeSession) {
 			$data = [];
 			$data["key"] = $cleDeSession;

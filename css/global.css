@@ -232,7 +232,7 @@ button:hover {
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
- Logout + après-partie
+ Logout + partie-terminée
 ----------------- */
 
 .logout-frame, .partie-terminee {
@@ -247,12 +247,12 @@ button:hover {
 	font-size: 50px;
 	text-align: center;
 	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	animation-name: pluieDEtoiles;
+	animation-name: cadreQuiBouge;
 	animation-duration: 2s;
 	animation-iteration-count: infinite;
 }
 
-@keyframes pluieDEtoiles {
+@keyframes cadreQuiBouge {
 	0% {
 		transform: translateY(30px);
 	}
@@ -273,6 +273,25 @@ button:hover {
 	100% {
 		transform: translateY(30px);
 	}
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
+ stats-du-joueur
+----------------- */
+
+#stats-du-joueur {
+	color: black;
+	font-weight: bold;
+	margin: 20px auto;
+	width: 85%;
+	border-radius: 3px;
+	border: 1px solid #6b5736;
+	padding: 20px;
+	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
+	font-size: 20px;
+	text-align: left;
+	text-shadow: -2px 1px 2px rgb(230, 104, 202);
+	margin-bottom: 185px;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
