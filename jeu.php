@@ -6,8 +6,9 @@
 ?>
 	<script src="javascript/TiledImage.js"></script>
 	<script src="javascript/jeu/Temp.js"></script>
+	<script src="javascript/jeu/Boss.js"></script>
 	<script src="javascript/jeu/AttaqueDuBoss.js"></script>
-	<div id="boss">
+	<div id="menu-boss">
 		<div id="infos-du-boss"></div>
 		<div id="marge-pr-hp-du-boss">
 			<div id="hp-du-boss"></div>

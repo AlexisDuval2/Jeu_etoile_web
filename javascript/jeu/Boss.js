@@ -1,45 +1,34 @@
 
-let canvas = null;
-let ctx = null;
-let spriteList = [];
-let imageEtoile = new Image();
-
 class Boss {
 	constructor() {
-		this.x = canvas.width;
-		this.y = canvas.height;
-		this.largeur = 50;
-		this.hauteur = 50;
-		this.vitesseX = 1;
-		this.vitesseY = 1;
-		this.xAttaque = 225;
-		this.vitesseXAttaque = 1.35;
-
+		this.x = canvas.width - 50;
+		this.y = canvas.height - 25;
 		this.columnCount = 28;
 		this.rowCount = 1;
-		this.refreshDelay = 65; // msec
+		this.refreshDelay = 65;
 		this.loopColumns = true;
 		this.scale = 1;
-		this.attaque = new TiledImage("images/leBossAttaque.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
-		this.attaque.changeRow(0); // One row per animation
-		this.attaque.changeMinMaxInterval(0, 27); // Loop from which column to which column?
+		this.sprite = new TiledImage("images/leBossAttaque.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
+		this.sprite.changeRow(0);
+		this.sprite.changeMinMaxInterval(0, 27);
+		this.node = null;
 	}
 
-	tick() {
-		this.xAttaque -= this.vitesseXAttaque;
-		this.attaque.tick(this.xAttaque, this.y, ctx);
-		return this.y < canvas.height ? true : false;
+	afficherInfos(data) {
+		document.getElementById("menu-boss").style.display = "block";
+		this.node = document.getElementById("infos-du-boss");
+		this.node.innerHTML = "<p>";
+		this.node.innerHTML += "Nom de la partie: " + data.game.name + " (" + data.game.level +")";
+		this.node.innerHTML += "</p>";
+
+		let barrehpBoss = data.game.hp * 100 / data.game.max_hp;
+		this.node = document.getElementById("hp-du-boss");
+		this.node.style.width = barrehpBoss + "%";
+		this.node.innerHTML = data.game.hp + "/" + data.game.max_hp;
+	}
+
+	tick(ctx) {
+		this.sprite.tick(this.x, this.y, ctx);
+		return true;
 	}
 }
-
-	let sprite = new TiledImage("images/leBossAttaque.png", 0, 0, 10000, false, 1.0, null);
-	sprite.changeRow(0); // One row per animation
-	sprite.changeMinMaxInterval(0, 13); // Loop from which column to which column?
-
-	tick();
-
-	function tick() {
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		sprite.tick(145, 75, ctx);
-		window.requestAnimationFrame(tick);
-	}

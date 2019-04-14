@@ -4,13 +4,14 @@ let ctx = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
+let boss = null;
 let attaqueDuBoss = null;
 let spriteList = [];
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
 	document.querySelector(".container").style.backgroundImage = "none";
-	document.getElementById("boss").style.display = "none";
+	document.getElementById("menu-boss").style.display = "none";
 
 	setTimeout(agrandirCadre, delaiCadre);
 
@@ -19,6 +20,9 @@ window.onload = () => {
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
+
+	boss = new Boss();
+	spriteList.push(boss);
 
 	tick();
 }
@@ -69,16 +73,7 @@ const traiter = () => {
 		else {
 			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
 
-			document.getElementById("boss").style.display = "block";
-			node = document.getElementById("infos-du-boss");
-			node.innerHTML = "<p>";
-			node.innerHTML += "Nom de la partie: " + data.game.name + " (" + data.game.level +")";
-			node.innerHTML += "</p>";
-
-			let barrehpBoss = data.game.hp * 100 / data.game.max_hp;
-			node = document.getElementById("hp-du-boss");
-			node.style.width = barrehpBoss + "%";
-			node.innerHTML = data.game.hp + "/" + data.game.max_hp;
+			boss.afficherInfos(data);
 
 			// afficher délai d'action...
 			node = document.getElementById("bouton1");

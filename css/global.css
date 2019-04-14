@@ -392,6 +392,7 @@ h2.valeur-du-niveau {
 	width: 630px;
 	height: 75%;
 	background-color: black;
+	background-image: url(../images/bgJeu1.png);
 	border: 2px solid rgb(255, 210, 25);
 	border-radius: 10px;
 }
@@ -403,7 +404,7 @@ h2.valeur-du-niveau {
 /* ---------------------------------
  MENU BOSS */
 
-#boss {
+#menu-boss {
 	width: 310px;
 	height: 60px;
 	position: absolute;
