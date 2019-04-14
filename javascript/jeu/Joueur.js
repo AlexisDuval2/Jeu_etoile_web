@@ -13,6 +13,7 @@ class Joueur {
 		this.sprite.changeMinMaxInterval(0, 2);
 		this.node = null;
 		this.attaque = ["Normal", "Special1", "Special2"];
+		this.peutAttaquer = true;
 	}
 
 	afficherInfos(data) {
@@ -36,8 +37,16 @@ class Joueur {
 		.then(response => response.json())
 		.then(data => {
 
+			this.peutAttaquer = false;
+
+			this.node = document.getElementById("bouton" + chiffre);
+			this.node.innerHTML = "ATTENDRE"; // FAIRE UNE ANIMATION CSS DE 2200 ms
+
 			console.log(data);
 
+			// if (data == "GAME_ENTERED") {
+			// 	window.location.href = "jeu.php";
+			// }
 
 			// "EMPTY_KEY"
 			// "USER_NOT_FOUND"
@@ -47,11 +56,16 @@ class Joueur {
 			// "SKILL_NOT_FOUND"
 			// "PLAYER_IS_DEAD"
 			// "NOT_ENOUGH_MP"
-
-			// if (data == "GAME_ENTERED") {
-			// 	window.location.href = "jeu.php";
-			// }
 		})
+	}
+
+	attendre(chiffre) {
+		let delai = 2200;
+		setTimeout(()=>{
+			this.peutAttaquer = true;
+			this.node = document.getElementById("bouton" + chiffre);
+			this.node.innerHTML = "bouton" + chiffre;
+		}, delai);
 	}
 
 	tick(ctx) {

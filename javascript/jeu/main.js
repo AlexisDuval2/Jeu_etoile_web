@@ -82,9 +82,12 @@ const traiter = () => {
 
 			// afficher délai d'action...
 			node = document.getElementById("bouton1");
-
 			node.onclick = () => {
-				joueur.attaquer(1);
+
+				if (joueur.peutAttaquer) {
+					joueur.attaquer(1);
+					joueur.attendre(1);
+				}
 			}
 
 			node = document.getElementById("nb-allies");
