@@ -4,11 +4,15 @@ let ctx = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
+let joueur = null;
+let boss = null;
+let attaqueDuBoss = null;
+let spriteList = [];
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
 	document.querySelector(".container").style.backgroundImage = "none";
-	document.getElementById("boss").style.display = "none";
+	document.getElementById("menu-boss").style.display = "none";
 
 	setTimeout(agrandirCadre, delaiCadre);
 
@@ -17,6 +21,13 @@ window.onload = () => {
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
+
+	joueur = new Joueur();
+	boss = new Boss();
+	spriteList.push(joueur);
+	spriteList.push(boss);
+
+	tick();
 }
 
 const agrandirCadre = () => {
@@ -27,7 +38,22 @@ const agrandirCadre = () => {
 	}
 }
 
-// fonction pour appeler la page en utilisant Ajax
+const tick = () => {
+
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+	for (let i = 0; i < spriteList.length; i++) {
+		const sprite = spriteList[i];
+		const alive = sprite.tick(ctx);
+		if (!alive) {
+			spriteList.splice(i, 1);
+			i--;
+		}
+	}
+
+	window.requestAnimationFrame(tick);
+}
+
 const traiter = () => {
 	fetch("ajaxJeu.php", {
 		method: "POST",
@@ -48,60 +74,17 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
-			if (data.game.attacked) {
 
-				let x = 225;
-				let y = 125;
-				let vitesseX = 1.35;
+			joueur.afficherInfos(data);
+			boss.afficherInfos(data);
 
-				let columnCount = 28;
-				let rowCount = 1;
-				let refreshDelay = 65; // msec
-				let loopColumns = true;
-				let scale = 1;
-				let sprite = new TiledImage("images/leBossAttaque.png", columnCount, rowCount, refreshDelay, loopColumns, scale, null);
-				sprite.changeRow(0); // One row per animation
-				sprite.changeMinMaxInterval(0, 27); // Loop from which column to which column?
-
-				tick();
-
-				function tick() {
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
-					x -= vitesseX;
-					sprite.tick(x, y, ctx);
-					window.requestAnimationFrame(tick);
-				}
-			}
-			else {
-				let sprite = new TiledImage("images/leBossAttaque.png", 0, 0, 10000, false, 1.0, null);
-				sprite.changeRow(0); // One row per animation
-				sprite.changeMinMaxInterval(0, 13); // Loop from which column to which column?
-
-				tick();
-
-				function tick() {
-					ctx.clearRect(0, 0, canvas.width, canvas.height);
-					sprite.tick(145, 75, ctx);
-					window.requestAnimationFrame(tick);
-				}
-			}
-
-			document.getElementById("boss").style.display = "block";
-			node = document.getElementById("infos-du-boss");
-			node.innerHTML = "<p>";
-			node.innerHTML += "Nom de la partie: " + data.game.name + " (" + data.game.level +")";
-			node.innerHTML += "</p>";
-
-			let barrehpBoss = data.game.hp * 100 / data.game.max_hp;
-			node = document.getElementById("hp-du-boss");
-			node.style.width = barrehpBoss + "%";
-			node.innerHTML = data.game.hp + "/" + data.game.max_hp;
+			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
 
 			// afficher délai d'action...
 			node = document.getElementById("bouton1");
 
 			node.onclick = () => {
-				console.log("bouton1");
+				joueur.attaquer(1);
 			}
 
 			node = document.getElementById("nb-allies");
@@ -119,13 +102,6 @@ const traiter = () => {
 				node.innerHTML += "HP: " + data.other_players[i].hp + "/" + data.other_players[i].max_hp;
 				node.innerHTML += "</p>";
 			}
-
-			node = document.getElementById("nom-joueur");
-			node.innerHTML = data.player.name + " ";
-			node = document.getElementById("hp-joueur");
-			node.innerHTML = "HP:" + data.player.hp + "/" + data.player.max_hp + " ";
-			node = document.getElementById("mp-joueur");
-			node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
 
 			// un sprite pour chaque allié...
 

@@ -7,11 +7,12 @@ class Joueur {
 		this.rowCount = 1;
 		this.refreshDelay = 700;
 		this.loopColumns = true;
-		this.scale = 0.42;
+		this.scale = 0.4;
 		this.sprite = new TiledImage("images/animationEtoileTourne.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
 		this.sprite.changeRow(0);
 		this.sprite.changeMinMaxInterval(0, 2);
 		this.node = null;
+		this.attaque = ["Normal", "Special1", "Special2"];
 	}
 
 	afficherInfos(data) {
@@ -21,6 +22,36 @@ class Joueur {
 		this.node.innerHTML = "HP:" + data.player.hp + "/" + data.player.max_hp + " ";
 		this.node = document.getElementById("mp-joueur");
 		this.node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
+	}
+
+	attaquer(chiffre) {
+		let formData = new FormData();
+		formData.append("nomAttaque", this.attaque[chiffre - 1]);
+
+		fetch("ajaxAttaquer.php", {
+			method: "POST",
+			credentials: "include",
+			body: formData
+		})
+		.then(response => response.json())
+		.then(data => {
+
+			console.log(data);
+
+
+			// "EMPTY_KEY"
+			// "USER_NOT_FOUND"
+			// "GAME_NOT_FOUND"
+			// "TOO_MANY_CALLS_BAN"
+			// "EMPTY_SKILL_NAME"
+			// "SKILL_NOT_FOUND"
+			// "PLAYER_IS_DEAD"
+			// "NOT_ENOUGH_MP"
+
+			// if (data == "GAME_ENTERED") {
+			// 	window.location.href = "jeu.php";
+			// }
+		})
 	}
 
 	tick(ctx) {

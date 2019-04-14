@@ -39,6 +39,13 @@
 			return UserDAO::callAPI("state", $data);
 		}
 
+		public static function attaquer($cleDeSession, $nomAttaque) {
+			$data = [];
+			$data["key"] = $cleDeSession;
+			$data["skill-name"] = $nomAttaque;
+			return UserDAO::callAPI("action", $data);
+		}
+
 		public static function callAPI($service, array $data) {
 			$apiURL = "https://apps-de-cours.com/web-sirius/server/api/" . $service . ".php";
 			$options = array(
