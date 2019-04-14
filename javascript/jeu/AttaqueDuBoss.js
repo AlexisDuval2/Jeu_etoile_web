@@ -21,7 +21,7 @@ class AttaqueDuBoss {
 		this.x -= this.vitesseX;
 		this.sprite.tick(this.x, this.y, ctx);
 
-		if (this.x > 65) {
+		if (this.x > 55) {
 			alive = true;
 		}
 

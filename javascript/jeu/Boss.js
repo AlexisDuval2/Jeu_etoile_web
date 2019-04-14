@@ -1,7 +1,7 @@
 
 class Boss {
 	constructor() {
-		this.x = canvas.width - 50;
+		this.x = canvas.width - 30;
 		this.y = canvas.height - 25;
 		this.columnCount = 28;
 		this.rowCount = 1;

@@ -4,6 +4,7 @@ let ctx = null;
 let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
+let joueur = null;
 let boss = null;
 let attaqueDuBoss = null;
 let spriteList = [];
@@ -21,7 +22,9 @@ window.onload = () => {
 	let delai = 2200;
 	setTimeout(traiter, delai);
 
+	joueur = new Joueur();
 	boss = new Boss();
+	spriteList.push(joueur);
 	spriteList.push(boss);
 
 	tick();
@@ -71,9 +74,11 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
-			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
 
+			joueur.afficherInfos(data);
 			boss.afficherInfos(data);
+
+			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
 
 			// afficher délai d'action...
 			node = document.getElementById("bouton1");
@@ -97,13 +102,6 @@ const traiter = () => {
 				node.innerHTML += "HP: " + data.other_players[i].hp + "/" + data.other_players[i].max_hp;
 				node.innerHTML += "</p>";
 			}
-
-			node = document.getElementById("nom-joueur");
-			node.innerHTML = data.player.name + " ";
-			node = document.getElementById("hp-joueur");
-			node.innerHTML = "HP:" + data.player.hp + "/" + data.player.max_hp + " ";
-			node = document.getElementById("mp-joueur");
-			node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
 
 			// un sprite pour chaque allié...
 
