@@ -5,7 +5,8 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/TiledImage.js"></script>
-	<script src="javascript/jeu.js"></script>
+	<script src="javascript/jeu/Temp.js"></script>
+	<script src="javascript/jeu/AttaqueDuBoss.js"></script>
 	<div id="boss">
 		<div id="infos-du-boss"></div>
 		<div id="marge-pr-hp-du-boss">

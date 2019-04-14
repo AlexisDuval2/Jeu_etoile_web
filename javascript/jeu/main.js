@@ -101,7 +101,7 @@ const traiter = () => {
 			node = document.getElementById("bouton1");
 
 			node.onclick = () => {
-				alert("test");
+				console.log("bouton1");
 			}
 
 			node = document.getElementById("nb-allies");

@@ -493,30 +493,34 @@ h2.valeur-du-niveau {
 	height: 90%;
 	display: flex;
 	flex-direction: column;
-	padding-top: 5%;
+	padding-top: 2.5%;
 }
 
 #bouton1, #bouton2, #bouton3 {
 	width: 100px;
 	margin-left: 14px;
-	height: 20%;
+	margin-bottom: 10%;
+	height: 13.5%;
 	background-repeat: no-repeat;
 	background-position-x: center;
 	color: black;
 	font-weight: bold;
 	text-align: center;
-	padding-top: 6.5%;
+	cursor: pointer;
 }
 
 #bouton1 {
+	padding-top: 6.5%;
 	background-image: url(../images/bouton1.png);
 }
 
 #bouton2 {
+	padding-top: 6.5%;
 	background-image: url(../images/bouton2.png);
 }
 
 #bouton3 {
+	padding-top: 6.5%;
 	background-image: url(../images/bouton3.png);
 }
 
