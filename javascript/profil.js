@@ -4,7 +4,7 @@ let node = null
 window.onload = () => {
 
 	node = document.getElementById("stats-du-joueur");
-	node.innerHTML = "Un instant s'il-vous-plaît...";
+	node.innerHTML = "<h1>Un instant s'il-vous-plaît...</h1>";
 
 	let delai = 2200;
 	setTimeout(traiter, delai);
@@ -23,20 +23,19 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
-
-			console.log(data);
-
-			node.innerHTML = "<p>" + data.username + "</p>";
-			node.innerHTML += "<p>" + data.welcome_text + "</p>";
-			node.innerHTML += "<p>" + data.type + data.level + "</p>";
-			node.innerHTML += "<p>" + data.hp + data.mp + data.exp + "</p>";
-			node.innerHTML += "<p>" + data.victories + data.loss + "</p>";
-			node.innerHTML += "<p>" + data.next_level_exp + "</p>";
-			node.innerHTML += "<p>" + data.unspent_points + data.unspent_skills + "</p>";
-			node.innerHTML += "<p>" + data.char_vitality + "</p>";
-			node.innerHTML += "<p>" + data.char_energy + "</p>";
-			node.innerHTML += "<p>" + data.char_agility + "</p>";
-			node.innerHTML += "<p>" + data.char_strength + "</p>";
+			node.innerHTML = "<h1>" + data.username + " - \"" + data.welcome_text + "\"</h1>";
+			node.innerHTML += "<p> Type: " + data.type + " (niveau: " + data.level + ")</p>";
+			node.innerHTML += "<p> HP: " + data.hp + "</p>";
+			node.innerHTML += "<p> MP: " + data.mp + "</p>";
+			node.innerHTML += "<p> EXP: " + data.exp + "/" + data.next_level_exp + "</p>";
+			node.innerHTML += "<p> Victoires: " + data.victories + "</p>";
+			node.innerHTML += "<p> Défaites: " + data.loss + "</p>";
+			node.innerHTML += "<p> Points à dépenser: " + data.unspent_points;
+			node.innerHTML += "<p> Pouvoirs à dépenser: " + data.unspent_skills + "</p>";
+			node.innerHTML += "<p> Vitalité: " + data.char_vitality + "</p>";
+			node.innerHTML += "<p> Énergie: " + data.char_energy + "</p>";
+			node.innerHTML += "<p> Force: " + data.char_strength + "</p>";
+			node.innerHTML += "<p> Agilité: " + data.char_agility + "</p>";
 
 			let delai = 2200;
 			setTimeout(traiter, delai);

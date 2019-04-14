@@ -232,6 +232,34 @@ button:hover {
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
+ stats-du-joueur
+----------------- */
+
+#stats-du-joueur {
+	color: rgb(230, 104, 202);
+	font-size: 22px;
+	line-height: 16px;
+	text-align: center;
+	margin: 20px auto;
+	margin-bottom: 160px;
+	width: 65%;
+	border-radius: 3px;
+	border: 1px solid #6b5736;
+	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#stats-du-joueur h1 {
+	color: black;
+	font-weight: bold;
+	font-size: 32px;
+	line-height: 38px;
+	text-shadow: -2px 1px 2px rgb(230, 104, 202);
+}
+
+/* -------------------------------------------------------------------------------------------------------------------
  Logout + partie-terminée
 ----------------- */
 
@@ -273,25 +301,6 @@ button:hover {
 	100% {
 		transform: translateY(30px);
 	}
-}
-
-/* -------------------------------------------------------------------------------------------------------------------
- stats-du-joueur
------------------ */
-
-#stats-du-joueur {
-	color: black;
-	font-weight: bold;
-	margin: 20px auto;
-	width: 85%;
-	border-radius: 3px;
-	border: 1px solid #6b5736;
-	padding: 20px;
-	background: linear-gradient(rgb(40, 80, 110), rgb(255, 210, 25));
-	font-size: 20px;
-	text-align: left;
-	text-shadow: -2px 1px 2px rgb(230, 104, 202);
-	margin-bottom: 185px;
 }
 
 /* -------------------------------------------------------------------------------------------------------------------
