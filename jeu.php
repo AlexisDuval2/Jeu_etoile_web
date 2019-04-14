@@ -22,9 +22,9 @@
 	<div id="jeu-milieu">
 		<canvas id="canvasJeu"></canvas>
 		<div id="menu-a-droite">
-			<div id="bouton1"></div>
-			<div id="bouton2"></div>
-			<div id="bouton3"></div>
+			<div id="bouton1">bouton1</div>
+			<div id="bouton2">bouton2</div>
+			<div id="bouton3">bouton3</div>
 		</div>
 	</div>
 	<div id="jeu-menu-bas">

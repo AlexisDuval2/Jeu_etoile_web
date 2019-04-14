@@ -457,7 +457,8 @@ h2.valeur-du-niveau {
 
 #nb-allies {
 	text-align: center;
-	padding-top: 10px;
+	text-shadow: -0.5px 0 rgb(130, 186, 238), 0 0.5px rgb(130, 186, 238), 0.5px 0 rgb(130, 186, 238), 0 -0.5px rgb(130, 186, 238);
+	padding-top: 8px;
 	background-image: url(../images/nbAllies.png);
 	color: rgb(0, 2, 110);
 	border: 2px solid black;
@@ -467,6 +468,7 @@ h2.valeur-du-niveau {
 #allie1, #allie2, #allie3, #allie4 {
 	background-color: black;
 	color: rgb(255, 210, 25);
+	font-size: 15px;
 	text-align: right;
 	padding-right: 5px;
 	border-style: dashed;
@@ -483,22 +485,27 @@ h2.valeur-du-niveau {
 	display: flex;
 	flex-wrap: wrap;
 	height: 65%;
+	width: 100%;
 }
 
 #menu-a-droite {
+	width: 15%;
+	height: 90%;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	width: 14%;
-	height: 75%;
-	background-color: black;
-	padding-left: 11px;
+	padding-top: 5%;
 }
 
 #bouton1, #bouton2, #bouton3 {
-	width: calc(316px / 3);
-	height: calc(245px / 3);
-	background-size: cover;
+	width: 100px;
+	margin-left: 14px;
+	height: 20%;
+	background-repeat: no-repeat;
+	background-position-x: center;
+	color: black;
+	font-weight: bold;
+	text-align: center;
+	padding-top: 6.5%;
 }
 
 #bouton1 {
@@ -532,7 +539,8 @@ h2.valeur-du-niveau {
 
 #nom-joueur, #hp-joueur, #mp-joueur{
 	text-align: center;
-	font-size: 32px;
+	font-size: 37px;
 	font-weight: 500;
-	padding-top: 30px;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	padding-top: 24px;
 }
