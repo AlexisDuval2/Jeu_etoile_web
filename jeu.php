@@ -22,7 +22,6 @@
 		<div id="allie1"></div>
 		<div id="allie2"></div>
 		<div id="allie3"></div>
-		<div id="allie4"></div>
 	</div>
 	<div id="jeu-milieu">
 		<canvas id="canvasJeu"></canvas>

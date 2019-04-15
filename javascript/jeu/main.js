@@ -5,9 +5,6 @@ let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
 let joueur = null;
-let allie1 = null;
-let allie2 = null;
-let allie3 = null;
 let boss = null;
 let spriteList = [];
 
@@ -26,16 +23,9 @@ window.onload = () => {
 
 	joueur = new Joueur();
 	joueur.attendre();
-
-	allie1 = new Allie(0);
-	allie2 = new Allie(1);
-	allie3 = new Allie(2);
-	boss = new Boss();
-
 	spriteList.push(joueur);
-	spriteList.push(allie1);
-	spriteList.push(allie2);
-	spriteList.push(allie3);
+
+	boss = new Boss();
 	spriteList.push(boss);
 
 	tick();
@@ -100,6 +90,7 @@ const traiter = () => {
 			node.innerHTML += "</p>";
 
 			for (let i = 0; i < data.other_players.length; i++) {
+				spriteList.push(new Allie(i + 1));
 				const noAllie = i + 1;
 				node = document.getElementById("allie" + noAllie);
 				node.innerHTML = "<p>";
@@ -109,9 +100,6 @@ const traiter = () => {
 				node.innerHTML += "HP: " + data.other_players[i].hp + "/" + data.other_players[i].max_hp;
 				node.innerHTML += "</p>";
 			}
-
-			// un sprite pour chaque allié...
-
 		}
 		let delai = 2200;
 		setTimeout(traiter, delai);

@@ -2,19 +2,22 @@
 class Allie {
 	constructor(chiffre) {
 
-		if (chiffre == 0) {
+		this.chiffre = chiffre;
+		this.vitesseX = 0.03;
+
+		if (this.chiffre == 1) {
 			this.x = 25;
 			this.y = 65;
 			this.scale = 0.85;
 			this.refreshDelay = 51;
 		}
-		else if (chiffre == 1) {
+		else if (this.chiffre == 2) {
 			this.x = 53;
 			this.y = 35;
 			this.scale = 0.38;
 			this.refreshDelay = 29;
 		}
-		else if (chiffre == 2) {
+		else if (this.chiffre == 3) {
 			this.x = 93;
 			this.y = 55;
 			this.scale = 0.7;
@@ -26,17 +29,28 @@ class Allie {
 		this.loopColumns = true;
 
 		this.sprite = new TiledImage("images/animationAllie.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
-		this.sprite.changeRow(chiffre);
+		this.sprite.changeRow(this.chiffre - 1);
 		this.sprite.changeMinMaxInterval(0, 19);
 	}
 
 	tick(ctx) {
 
+		let alive = false;
+
+		this.x += this.vitesseX;
+
 		this.sprite.tick(this.x, this.y, ctx);
-		return true;
-		// if (this.alive) {
-		// 	this.sprite.tick(this.x, this.y, ctx);
-		// }
-		// return this.alive;
+
+		if (this.chiffre == 1 &&  this.x < 30) {
+			alive = true;
+		}
+		else if (this.chiffre == 2 &&  this.x < 58) {
+			alive = true;
+		}
+		else if (this.chiffre == 3 &&  this.x < 98) {
+			alive = true;
+		}
+
+		return alive;
 	}
 }

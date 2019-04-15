@@ -452,11 +452,17 @@ h2.valeur-du-niveau {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgb(255, 210, 25);
+	border-top: none;
+	border-left: none;
+	border-right: none;
 	margin-top: 60px;
 }
 
-#nb-allies, #allie1, #allie2, #allie3, #allie4 {
-	width: 20%;
+#nb-allies, #allie1, #allie2, #allie3 {
+	width: 40%;
 	height: 100%;
 	font-size: 18px;
 	color: black;
@@ -474,7 +480,7 @@ h2.valeur-du-niveau {
 	border-radius: 10px;
 }
 
-#allie1, #allie2, #allie3, #allie4 {
+#allie1, #allie2, #allie3 {
 	background-color: black;
 	color: rgb(255, 210, 25);
 	font-size: 15px;
