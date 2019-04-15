@@ -10,29 +10,29 @@ class AttaquesDuJoueur {
 		if (chiffre == 1) {
 			this.y = canvas.height - 25;
 			this.refreshDelay = 33;
-			this.scale = 0.5;
-			this.vitesseX = -5;
-			this.accelerationX = 0.6;
+			this.scale = 0.45;
+			this.vitesseX = -6.7;
+			this.accelerationX = 0.7;
 			this.vitesseY = 0;
 			this.accelerationY = 0;
 		}
 		else if (chiffre == 2) {
 			this.y = canvas.height - 25;
 			this.refreshDelay = 33;
-			this.scale = 0.5;
+			this.scale = 0.45;
 			this.vitesseX = 5.5;
 			this.accelerationX = 0;
 			this.vitesseY = -10;
 			this.accelerationY = 0.46;
 		}
 		else if (chiffre == 3) {
-			this.y = canvas.height - 25;
+			this.y = canvas.height - 35;
 			this.refreshDelay = 33;
-			this.scale = 0.5;
-			this.vitesseX = -5;
-			this.accelerationX = 0.6;
-			this.vitesseY = 1;
-			this.accelerationY = 0;
+			this.scale = 0.345;
+			this.vitesseX = 5.77;
+			this.accelerationX = 0;
+			this.vitesseY = -34.25;
+			this.accelerationY = 1.77;
 		}
 
 		this.sprite = new TiledImage("images/attaques.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
