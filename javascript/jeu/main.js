@@ -8,7 +8,7 @@ let joueur = null;
 let nbDAllies = 0
 let boss = null;
 let spriteList = [];
-let i = 300;
+let i = 0;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -92,21 +92,8 @@ const traiter = () => {
 			node.innerHTML += "</p>";
 
 			if (nbDAllies < data.other_players.length) {
-
-				i = 300;
-				setInterval(test2, 10);
-
-
-				// let i = 300;
-				// while (i > 0) {
-				// 	if (i % 10 == 1) {
-				// 		document.querySelector(".container").style.backgroundColor = "red";
-				// 	}
-				// 	else {
-				// 		document.querySelector(".container").style.backgroundColor = "blue";
-				// 	}
-				// 	i--;
-				// }
+				i = 30;
+				setInterval(animerAllierQuiRentre, 63);
 			}
 
 			for (let i = 0; i < data.other_players.length; i++) {
@@ -128,7 +115,7 @@ const traiter = () => {
 	})
 }
 
-const test2 = () => {
+const animerAllierQuiRentre = () => {
 
 	let temp = document.querySelector(".container");
 
@@ -136,10 +123,10 @@ const test2 = () => {
 		temp.style.backgroundColor = "black";
 	} else {
 		if (i % 2 == 0) {
-			temp.style.backgroundColor = "red";
+			temp.style.backgroundColor = "rgb(255, 210, 25)";
 		}
 		else {
-			temp.style.backgroundColor = "blue";
+			temp.style.backgroundColor = "rgb(130, 186, 238)";
 		}
 		i--;
 	}
