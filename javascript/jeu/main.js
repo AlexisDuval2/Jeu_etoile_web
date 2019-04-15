@@ -5,6 +5,7 @@ let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
 let joueur = null;
+let nbDAllies = 0
 let boss = null;
 let spriteList = [];
 
@@ -89,6 +90,10 @@ const traiter = () => {
 			node.innerHTML += "Nb d'alliés: " + data.other_players.length + "/" + data.game.max_users;
 			node.innerHTML += "</p>";
 
+			if (nbDAllies < data.other_players.length) {
+				console.log("animation");
+			}
+
 			for (let i = 0; i < data.other_players.length; i++) {
 				spriteList.push(new Allie(i + 1));
 				const noAllie = i + 1;
@@ -103,5 +108,7 @@ const traiter = () => {
 		}
 		let delai = 2200;
 		setTimeout(traiter, delai);
+
+		nbDAllies = data.other_players.length;
 	})
 }
