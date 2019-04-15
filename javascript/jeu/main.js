@@ -84,6 +84,7 @@ const traiter = () => {
 				spriteList.push(new AttaquesDuJoueur(joueur.noAttaque))
 			}
 
+
 			boss.afficherInfos(data);
 			if (data.game.attacked) {
 				spriteList.push(new AttaqueDuBoss())
