@@ -13,7 +13,6 @@ class Joueur {
 		this.sprite.changeMinMaxInterval(0, 2);
 		this.node = null;
 		this.peutAttaquer = true;
-		this.enTrainDAttaquer = false;
 		this.noAttaque = 0;
 	}
 
@@ -27,7 +26,6 @@ class Joueur {
 	}
 
 	attaquer(nomAttaque, spriteList) {
-		this.enTrainDAttaquer = true;
 		let formData = new FormData();
 		formData.append("nomAttaque", nomAttaque);
 
@@ -66,7 +64,6 @@ class Joueur {
 		let delai = 2200;
 		setTimeout(()=>{
 			this.peutAttaquer = true;
-			this.enTrainDAttaquer = false;
 			for (let i = 1; i <= 3; i++) {
 				this.node = document.getElementById("bouton" + i);
 				this.node.innerHTML = "bouton" + i;

@@ -31,8 +31,8 @@ class AttaquesDuJoueur {
 			this.scale = 0.345;
 			this.vitesseX = 5.95;
 			this.accelerationX = 0;
-			this.vitesseY = -34.25;
-			this.accelerationY = 1.77;
+			this.vitesseY = -32;
+			this.accelerationY = 1.70;
 		}
 
 		this.sprite = new TiledImage("images/attaques.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
@@ -52,7 +52,7 @@ class AttaquesDuJoueur {
 
 		this.sprite.tick(this.x, this.y, ctx);
 
-		if (this.x < canvas.width - 30) {
+		if (this.x < canvas.width - 30 && this.y <= canvas.height) {
 			alive = true;
 		}
 
