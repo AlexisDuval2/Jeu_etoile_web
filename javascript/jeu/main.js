@@ -79,11 +79,7 @@ const traiter = () => {
 		else {
 
 			joueur.afficherInfos(data);
-			joueur.action();
-			if (joueur.enTrainDAttaquer) {
-				spriteList.push(new AttaquesDuJoueur(joueur.noAttaque))
-			}
-
+			joueur.action(spriteList);
 
 			boss.afficherInfos(data);
 			if (data.game.attacked) {

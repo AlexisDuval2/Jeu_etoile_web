@@ -29,7 +29,7 @@ class AttaquesDuJoueur {
 			this.y = canvas.height - 35;
 			this.refreshDelay = 33;
 			this.scale = 0.345;
-			this.vitesseX = 5.77;
+			this.vitesseX = 5.95;
 			this.accelerationX = 0;
 			this.vitesseY = -34.25;
 			this.accelerationY = 1.77;

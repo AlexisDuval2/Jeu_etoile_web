@@ -26,7 +26,8 @@ class Joueur {
 		this.node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
 	}
 
-	attaquer(nomAttaque) {
+	attaquer(nomAttaque, spriteList) {
+		this.enTrainDAttaquer = true;
 		let formData = new FormData();
 		formData.append("nomAttaque", nomAttaque);
 
@@ -53,7 +54,7 @@ class Joueur {
 			this.node = document.getElementById("bouton" + chiffre);
 			if (data == "OK") {
 				this.node.innerHTML = data;
-				this.enTrainDAttaquer = true;
+				spriteList.push(new AttaquesDuJoueur(chiffre))
 			}
 			else {
 				this.node.innerHTML = "N/A";
@@ -73,22 +74,22 @@ class Joueur {
 		}, delai);
 	}
 
-	action() {
+	action(spriteList) {
 		for (let i = 1; i <=3; i++) {
 			this.node = document.getElementById("bouton" + i);
 			this.node.onclick = () => {
 				if (this.peutAttaquer) {
 					if (i == 1) {
 						this.noAttaque = 1;
-						this.attaquer("Normal");
+						this.attaquer("Normal", spriteList);
 					}
 					else if (i == 2) {
 						this.noAttaque = 2;
-						this.attaquer("Special1");
+						this.attaquer("Special1", spriteList);
 					}
 					else if (i == 3) {
 						this.noAttaque = 3;
-						this.attaquer("Special2");
+						this.attaquer("Special2", spriteList);
 					}
 					this.attendre();
 				}

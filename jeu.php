@@ -8,6 +8,7 @@
 	<script src="javascript/jeu/main.js"></script>
 	<script src="javascript/jeu/Joueur.js"></script>
 	<script src="javascript/jeu/AttaquesDuJoueur.js"></script>
+	<script src="javascript/jeu/Allie.js"></script>
 	<script src="javascript/jeu/Boss.js"></script>
 	<script src="javascript/jeu/AttaqueDuBoss.js"></script>
 	<div id="menu-boss">
