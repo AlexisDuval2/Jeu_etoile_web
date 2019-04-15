@@ -14,6 +14,7 @@ class Joueur {
 		this.node = null;
 		this.peutAttaquer = true;
 		this.enTrainDAttaquer = false;
+		this.noAttaque = 0;
 	}
 
 	afficherInfos(data) {
@@ -54,7 +55,9 @@ class Joueur {
 				this.node.innerHTML = data;
 				this.enTrainDAttaquer = true;
 			}
-			else {this.node.innerHTML = "N/A";}
+			else {
+				this.node.innerHTML = "N/A";
+			}
 		})
 	}
 
@@ -72,27 +75,25 @@ class Joueur {
 
 	action() {
 		for (let i = 1; i <=3; i++) {
-			let resultat = 0
 			this.node = document.getElementById("bouton" + i);
 			this.node.onclick = () => {
 				if (this.peutAttaquer) {
 					if (i == 1) {
+						this.noAttaque = 1;
 						this.attaquer("Normal");
-						resultat = 1;
 					}
 					else if (i == 2) {
+						this.noAttaque = 2;
 						this.attaquer("Special1");
-						resultat = 2;
 					}
 					else if (i == 3) {
+						this.noAttaque = 3;
 						this.attaquer("Special2");
-						resultat = 3;
 					}
 					this.attendre();
 				}
 			}
 		}
-		return resultat;
 	}
 
 	tick(ctx) {

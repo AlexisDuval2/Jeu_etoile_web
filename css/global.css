@@ -160,6 +160,14 @@ p {
 	margin-bottom: 10px;
 }
 
+.container h3 {
+	font-style: italic;
+}
+
+.container div p {
+	line-height: 12px;
+}
+
 a {
 	text-decoration: none;
 	color: white;

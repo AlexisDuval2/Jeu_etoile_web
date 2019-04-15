@@ -24,9 +24,7 @@ window.onload = () => {
 	setTimeout(traiter, delai);
 
 	joueur = new Joueur();
-	joueur.attendre(1);
-	joueur.attendre(2);
-	joueur.attendre(3);
+	joueur.attendre();
 
 	boss = new Boss();
 	spriteList.push(joueur);
@@ -81,11 +79,15 @@ const traiter = () => {
 		else {
 
 			joueur.afficherInfos(data);
-			let choixAttaque = joueur.action();
-			if (joueur.enTrainDAttaquer) {spriteList.push(new AttaquesDuJoueur(choixAttaque))}
+			joueur.action();
+			if (joueur.enTrainDAttaquer) {
+				spriteList.push(new AttaquesDuJoueur(joueur.noAttaque))
+			}
 
 			boss.afficherInfos(data);
-			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())}
+			if (data.game.attacked) {
+				spriteList.push(new AttaqueDuBoss())
+			}
 
 			node = document.getElementById("nb-allies");
 			node.innerHTML = "<p>";
