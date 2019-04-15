@@ -5,7 +5,9 @@ let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
 let joueur = null;
-let allies = null
+let allie1 = null;
+let allie2 = null;
+let allie3 = null;
 let boss = null;
 let spriteList = [];
 
@@ -24,11 +26,16 @@ window.onload = () => {
 
 	joueur = new Joueur();
 	joueur.attendre();
-	allies = new Allies();
+
+	allie1 = new Allie(0);
+	allie2 = new Allie(1);
+	allie3 = new Allie(2);
 	boss = new Boss();
 
 	spriteList.push(joueur);
-	spriteList.push(allies);
+	spriteList.push(allie1);
+	spriteList.push(allie2);
+	spriteList.push(allie3);
 	spriteList.push(boss);
 
 	tick();
