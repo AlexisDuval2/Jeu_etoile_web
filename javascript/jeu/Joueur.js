@@ -13,6 +13,7 @@ class Joueur {
 		this.sprite.changeMinMaxInterval(0, 2);
 		this.node = null;
 		this.peutAttaquer = true;
+		this.enTrainDAttaquer = false;
 	}
 
 	afficherInfos(data) {
@@ -49,7 +50,10 @@ class Joueur {
 			else if (nomAttaque == "Special1") {chiffre = 2;}
 			else if (nomAttaque == "Special2") {chiffre = 3;}
 			this.node = document.getElementById("bouton" + chiffre);
-			if (data == "OK") {this.node.innerHTML = data;}
+			if (data == "OK") {
+				this.node.innerHTML = data;
+				this.enTrainDAttaquer = true;
+			}
 			else {this.node.innerHTML = "N/A";}
 		})
 	}
@@ -58,6 +62,7 @@ class Joueur {
 		let delai = 2200;
 		setTimeout(()=>{
 			this.peutAttaquer = true;
+			this.enTrainDAttaquer = false;
 			for (let i = 1; i <= 3; i++) {
 				this.node = document.getElementById("bouton" + i);
 				this.node.innerHTML = "bouton" + i;
@@ -67,16 +72,27 @@ class Joueur {
 
 	action() {
 		for (let i = 1; i <=3; i++) {
+			let resultat = 0
 			this.node = document.getElementById("bouton" + i);
 			this.node.onclick = () => {
 				if (this.peutAttaquer) {
-					if (i == 1) {this.attaquer("Normal");}
-					else if (i == 2) {this.attaquer("Special1");}
-					else if (i == 3) {this.attaquer("Special2");}
+					if (i == 1) {
+						this.attaquer("Normal");
+						resultat = 1;
+					}
+					else if (i == 2) {
+						this.attaquer("Special1");
+						resultat = 2;
+					}
+					else if (i == 3) {
+						this.attaquer("Special2");
+						resultat = 3;
+					}
 					this.attendre();
 				}
 			}
 		}
+		return resultat;
 	}
 
 	tick(ctx) {

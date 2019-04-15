@@ -5,6 +5,7 @@ let tailleCadre = 350;
 const tailleFinaleDuCadre = 675;
 const delaiCadre = 12;
 let joueur = null;
+let attaquesDuJoueur = null;
 let boss = null;
 let attaqueDuBoss = null;
 let spriteList = [];
@@ -80,10 +81,11 @@ const traiter = () => {
 		else {
 
 			joueur.afficherInfos(data);
-			joueur.action();
+			let choixAttaque = joueur.action();
+			if (joueur.enTrainDAttaquer) {spriteList.push(new AttaquesDuJoueur(choixAttaque))}
 
 			boss.afficherInfos(data);
-			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
+			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())}
 
 			node = document.getElementById("nb-allies");
 			node.innerHTML = "<p>";
