@@ -44,20 +44,13 @@ class Joueur {
 				this.node.innerHTML = "ATTENDRE";
 			}
 
-			console.log(data);
-
-			// if (data == "GAME_ENTERED") {
-			// 	window.location.href = "jeu.php";
-			// }
-
-			// "EMPTY_KEY"
-			// "USER_NOT_FOUND"
-			// "GAME_NOT_FOUND"
-			// "TOO_MANY_CALLS_BAN"
-			// "EMPTY_SKILL_NAME"
-			// "SKILL_NOT_FOUND"
-			// "PLAYER_IS_DEAD"
-			// "NOT_ENOUGH_MP"
+			let chiffre = 0;
+			if (nomAttaque == "Normal") {chiffre = 1;}
+			else if (nomAttaque == "Special1") {chiffre = 2;}
+			else if (nomAttaque == "Special2") {chiffre = 3;}
+			this.node = document.getElementById("bouton" + chiffre);
+			if (data == "OK") {this.node.innerHTML = data;}
+			else {this.node.innerHTML = "N/A";}
 		})
 	}
 
