@@ -8,6 +8,7 @@ let joueur = null;
 let nbDAllies = 0
 let boss = null;
 let spriteList = [];
+let i = 300;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -91,7 +92,21 @@ const traiter = () => {
 			node.innerHTML += "</p>";
 
 			if (nbDAllies < data.other_players.length) {
-				console.log("animation");
+
+				i = 300;
+				setInterval(test2, 10);
+
+
+				// let i = 300;
+				// while (i > 0) {
+				// 	if (i % 10 == 1) {
+				// 		document.querySelector(".container").style.backgroundColor = "red";
+				// 	}
+				// 	else {
+				// 		document.querySelector(".container").style.backgroundColor = "blue";
+				// 	}
+				// 	i--;
+				// }
 			}
 
 			for (let i = 0; i < data.other_players.length; i++) {
@@ -111,4 +126,21 @@ const traiter = () => {
 
 		nbDAllies = data.other_players.length;
 	})
+}
+
+const test2 = () => {
+
+	let temp = document.querySelector(".container");
+
+	if (i == 0) {
+		temp.style.backgroundColor = "black";
+	} else {
+		if (i % 2 == 0) {
+			temp.style.backgroundColor = "red";
+		}
+		else {
+			temp.style.backgroundColor = "blue";
+		}
+		i--;
+	}
 }
