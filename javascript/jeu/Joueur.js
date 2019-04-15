@@ -12,7 +12,6 @@ class Joueur {
 		this.sprite.changeRow(0);
 		this.sprite.changeMinMaxInterval(0, 2);
 		this.node = null;
-		this.attaque = ["Normal", "Special1", "Special2"];
 		this.peutAttaquer = true;
 	}
 
@@ -25,9 +24,9 @@ class Joueur {
 		this.node.innerHTML = "MP:" + data.player.mp + "/" + data.player.max_mp + " ";
 	}
 
-	attaquer(chiffre) {
+	attaquer(nomAttaque) {
 		let formData = new FormData();
-		formData.append("nomAttaque", this.attaque[chiffre - 1]);
+		formData.append("nomAttaque", nomAttaque);
 
 		fetch("ajaxAttaquer.php", {
 			method: "POST",
@@ -39,8 +38,11 @@ class Joueur {
 
 			this.peutAttaquer = false;
 
-			this.node = document.getElementById("bouton" + chiffre);
-			this.node.innerHTML = "ATTENDRE"; // FAIRE UNE ANIMATION CSS DE 2200 ms
+			// FAIRE UNE ANIMATION CSS DE 2200 ms
+			for (let i = 1; i <= 3; i++) {
+				this.node = document.getElementById("bouton" + i);
+				this.node.innerHTML = "ATTENDRE";
+			}
 
 			console.log(data);
 
@@ -59,13 +61,29 @@ class Joueur {
 		})
 	}
 
-	attendre(chiffre) {
+	attendre() {
 		let delai = 2200;
 		setTimeout(()=>{
 			this.peutAttaquer = true;
-			this.node = document.getElementById("bouton" + chiffre);
-			this.node.innerHTML = "bouton" + chiffre;
+			for (let i = 1; i <= 3; i++) {
+				this.node = document.getElementById("bouton" + i);
+				this.node.innerHTML = "bouton" + i;
+			}
 		}, delai);
+	}
+
+	action() {
+		for (let i = 1; i <=3; i++) {
+			this.node = document.getElementById("bouton" + i);
+			this.node.onclick = () => {
+				if (this.peutAttaquer) {
+					if (i == 1) {this.attaquer("Normal");}
+					else if (i == 2) {this.attaquer("Special1");}
+					else if (i == 3) {this.attaquer("Special2");}
+					this.attendre();
+				}
+			}
+		}
 	}
 
 	tick(ctx) {

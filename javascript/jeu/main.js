@@ -23,6 +23,10 @@ window.onload = () => {
 	setTimeout(traiter, delai);
 
 	joueur = new Joueur();
+	joueur.attendre(1);
+	joueur.attendre(2);
+	joueur.attendre(3);
+
 	boss = new Boss();
 	spriteList.push(joueur);
 	spriteList.push(boss);
@@ -76,19 +80,10 @@ const traiter = () => {
 		else {
 
 			joueur.afficherInfos(data);
+			joueur.action();
+
 			boss.afficherInfos(data);
-
 			if (data.game.attacked) {spriteList.push(new AttaqueDuBoss())};
-
-			// afficher délai d'action...
-			node = document.getElementById("bouton1");
-			node.onclick = () => {
-
-				if (joueur.peutAttaquer) {
-					joueur.attaquer(1);
-					joueur.attendre(1);
-				}
-			}
 
 			node = document.getElementById("nb-allies");
 			node.innerHTML = "<p>";
