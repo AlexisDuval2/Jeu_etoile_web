@@ -1,0 +1,4 @@
+
+Let music = Audio(pathMP3);
+music.loop = true/false;
+music.play();
