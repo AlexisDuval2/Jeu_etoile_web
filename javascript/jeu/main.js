@@ -30,9 +30,6 @@ window.onload = () => {
 	boss = new Boss();
 	spriteList.push(boss);
 
-	spriteList.push(new AttaqueDUnAllie());
-
-
 	tick();
 }
 
@@ -81,9 +78,6 @@ const traiter = () => {
 		}
 		else {
 
-			spriteList.push(new AttaqueDUnAllie());
-
-
 			joueur.afficherInfos(data);
 			joueur.action(spriteList);
 
@@ -104,7 +98,7 @@ const traiter = () => {
 
 			for (let i = 0; i < data.other_players.length; i++) {
 				spriteList.push(new Allie(i + 1));
-				let infoAttaque = data.other_players.attacked;
+				let infoAttaque = data.other_players[i].attacked;
 				if (infoAttaque=="Normal" || infoAttaque=="Special1" || infoAttaque=="Special2") {
 					spriteList.push(new AttaqueDUnAllie());
 				}
