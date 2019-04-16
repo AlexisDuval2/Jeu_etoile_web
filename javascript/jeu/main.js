@@ -8,7 +8,7 @@ let joueur = null;
 let nbDAllies = 0
 let boss = null;
 let spriteList = [];
-let i = 0;
+let delaiPrEntreeDUnAllie = 0;
 
 window.onload = () => {
 	document.querySelector(".container").style.animationName = "aucune";
@@ -29,6 +29,9 @@ window.onload = () => {
 
 	boss = new Boss();
 	spriteList.push(boss);
+
+	spriteList.push(new AttaqueDUnAllie());
+
 
 	tick();
 }
@@ -78,6 +81,9 @@ const traiter = () => {
 		}
 		else {
 
+			spriteList.push(new AttaqueDUnAllie());
+
+
 			joueur.afficherInfos(data);
 			joueur.action(spriteList);
 
@@ -92,12 +98,16 @@ const traiter = () => {
 			node.innerHTML += "</p>";
 
 			if (nbDAllies < data.other_players.length) {
-				i = 30;
+				delaiPrEntreeDUnAllie = 30;
 				setInterval(animerAllierQuiRentre, 63);
 			}
 
 			for (let i = 0; i < data.other_players.length; i++) {
 				spriteList.push(new Allie(i + 1));
+				let infoAttaque = data.other_players.attacked;
+				if (infoAttaque=="Normal" || infoAttaque=="Special1" || infoAttaque=="Special2") {
+					spriteList.push(new AttaqueDUnAllie());
+				}
 				const noAllie = i + 1;
 				node = document.getElementById("allie" + noAllie);
 				node.innerHTML = "<p>";
@@ -119,15 +129,15 @@ const animerAllierQuiRentre = () => {
 
 	let temp = document.querySelector(".container");
 
-	if (i == 0) {
+	if (delaiPrEntreeDUnAllie == 0) {
 		temp.style.backgroundColor = "black";
 	} else {
-		if (i % 2 == 0) {
+		if (delaiPrEntreeDUnAllie % 2 == 0) {
 			temp.style.backgroundColor = "rgb(255, 210, 25)";
 		}
 		else {
 			temp.style.backgroundColor = "rgb(130, 186, 238)";
 		}
-		i--;
+		delaiPrEntreeDUnAllie--;
 	}
 }
