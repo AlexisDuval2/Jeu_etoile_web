@@ -15,7 +15,7 @@ class AttaquesDuJoueur {
 			this.accelerationX = 0.7;
 			this.vitesseY = 0;
 			this.accelerationY = 0;
-			let music = new Audio("audio\\attaque1.mp3");
+			let music = new Audio("audio/attaque1.mp3");
 			music.loop = false;
 			music.play();
 		}
@@ -27,7 +27,7 @@ class AttaquesDuJoueur {
 			this.accelerationX = 0;
 			this.vitesseY = -10;
 			this.accelerationY = 0.46;
-			let music = new Audio("audio\\attaque2.mp3");
+			let music = new Audio("audio/attaque2.mp3");
 			music.loop = false;
 			music.play();
 		}
@@ -35,11 +35,13 @@ class AttaquesDuJoueur {
 			this.y = canvas.height - 35;
 			this.refreshDelay = 33;
 			this.scale = 0.345;
-			this.vitesseX = 5.95;
+			this.vitesseX = 2;
 			this.accelerationX = 0;
-			this.vitesseY = -32;
-			this.accelerationY = 1.70;
-			let music = new Audio("audio\\attaque3.mp3");
+			// this.vitesseY = -32;
+			// this.accelerationY = 1.70;
+			this.vitesseY = -3.2;
+			this.accelerationY = 0.06;
+			let music = new Audio("audio/attaque3.mp3");
 			music.loop = false;
 			music.play();
 		}

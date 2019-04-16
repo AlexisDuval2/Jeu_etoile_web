@@ -30,6 +30,9 @@ window.onload = () => {
 	boss = new Boss();
 	spriteList.push(boss);
 
+	spriteList.push(new AttaquesDuJoueur(3));
+
+
 	tick();
 }
 
@@ -77,6 +80,9 @@ const traiter = () => {
 			window.location.href = "logout.php";
 		}
 		else {
+
+			spriteList.push(new AttaquesDuJoueur(3));
+
 
 			joueur.afficherInfos(data);
 			joueur.action(spriteList);

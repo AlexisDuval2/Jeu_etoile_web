@@ -20,7 +20,7 @@ class AttaqueDUnAllie {
 		this.sprite.changeRow(0);
 		this.sprite.changeMinMaxInterval(0, 4);
 
-		let music = new Audio("audio\\allieAttaque.mp3");
+		let music = new Audio("audio/allieAttaque.mp3");
 		music.loop = false;
 		music.play();
 	}
