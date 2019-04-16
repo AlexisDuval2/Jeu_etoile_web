@@ -15,6 +15,9 @@ class AttaquesDuJoueur {
 			this.accelerationX = 0.7;
 			this.vitesseY = 0;
 			this.accelerationY = 0;
+			let music = new Audio("audio\\attaque1.mp3");
+			music.loop = false;
+			music.play();
 		}
 		else if (chiffre == 2) {
 			this.y = canvas.height - 25;
@@ -24,6 +27,9 @@ class AttaquesDuJoueur {
 			this.accelerationX = 0;
 			this.vitesseY = -10;
 			this.accelerationY = 0.46;
+			let music = new Audio("audio\\attaque2.mp3");
+			music.loop = false;
+			music.play();
 		}
 		else if (chiffre == 3) {
 			this.y = canvas.height - 35;
@@ -33,6 +39,9 @@ class AttaquesDuJoueur {
 			this.accelerationX = 0;
 			this.vitesseY = -32;
 			this.accelerationY = 1.70;
+			let music = new Audio("audio\\attaque3.mp3");
+			music.loop = false;
+			music.play();
 		}
 
 		this.sprite = new TiledImage("images/attaques.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);

@@ -19,6 +19,10 @@ class AttaqueDUnAllie {
 		this.sprite = new TiledImage("images/animationAllieAttaque.png", this.columnCount, this.rowCount, this.refreshDelay, this.loopColumns, this.scale, null);
 		this.sprite.changeRow(0);
 		this.sprite.changeMinMaxInterval(0, 4);
+
+		let music = new Audio("audio\\allieAttaque.mp3");
+		music.loop = false;
+		music.play();
 	}
 
 	tick(ctx) {
