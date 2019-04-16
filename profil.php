@@ -5,6 +5,11 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/profil.js"></script>
+	<script>
+		let music = new Audio("audio\\profil.mp3");
+		music.loop = true;
+		music.play();
+	</script>
 	<h1>Mon profil</h1>
 	<div id="stats-du-joueur"></div>
 <?php

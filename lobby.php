@@ -6,6 +6,11 @@
 ?>
 	<script src="javascript/TiledImage.js"></script>
 	<script src="javascript/lobby.js"></script>
+	<script>
+		let music = new Audio("audio\\lobby.mp3");
+		music.loop = true;
+		music.play();
+	</script>
 	<h1>Bienvenue au Lobby!</h1>
 	<div id="erreur-choix-partie"></div>
 	<div id="boite-de-niveaux">

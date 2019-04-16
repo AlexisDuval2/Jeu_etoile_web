@@ -5,6 +5,11 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/logout.js"></script>
+	<script>
+		let music = new Audio("audio\\logout.mp3");
+		music.loop = true;
+		music.play();
+	</script>
 	<canvas id="canvasLogout"></canvas>
 	<h1>Déconnexion</h1>
 	<div class="logout-frame">

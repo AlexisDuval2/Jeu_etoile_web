@@ -5,6 +5,11 @@
 	require_once("partial/header.php");
 ?>
 	<script src="javascript/index.js"></script>
+	<script>
+		let music = new Audio("audio\\login.mp3");
+		music.loop = true;
+		music.play();
+	</script>
 	<canvas id="canvasIndex"></canvas>
 	<h1>Connexion</h1>
 	<div class="login-form-frame">

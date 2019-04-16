@@ -1,4 +1,9 @@
 
-Let music = Audio(pathMP3);
-music.loop = true/false;
+let music = new Audio("audio\\defaite.mp3");
+music.loop = true;
 music.play();
+
+
+
+
+

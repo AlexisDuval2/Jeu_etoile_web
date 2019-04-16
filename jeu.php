@@ -12,6 +12,11 @@
 	<script src="javascript/jeu/AttaqueDUnAllie.js"></script>
 	<script src="javascript/jeu/Boss.js"></script>
 	<script src="javascript/jeu/AttaqueDuBoss.js"></script>
+	<script>
+		let music = new Audio("audio\\jeu.mp3");
+		music.loop = true;
+		music.play();
+	</script>
 	<div id="menu-boss">
 		<div id="infos-du-boss"></div>
 		<div id="marge-pr-hp-du-boss">
